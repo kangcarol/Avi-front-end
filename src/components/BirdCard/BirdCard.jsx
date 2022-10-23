@@ -7,22 +7,23 @@ import styles from './BirdCard.module.css'
 
 const BirdCard = ({ bird }) => {
   return (
-    <Link to={`/birds/${bird._id}`}>
-      <article className={styles.container}>
-        <header>
-          <span>
-            <img src={bird.image} className="birdPhoto" alt="{bird.name}" />
-            <h1>{bird.name}</h1>
-            {/* <Icon category={bird.category} /> */}
-          </span>
-          {/* <AuthorInfo content={bird} /> */}
-        </header>
-        <p>{bird.description}</p>
-{/* 
-        <button onClick={() => props.addToWishlist({bird})}>+ wishlist</button> */}
+    <>
+      <h1>Bird List</h1>
+      <Link to={`/birds/${bird._id}`}>
+        <article className={styles.container}>
+          <header>
+            <span>
+              <img src={bird.image} className="birdPhoto" alt="{bird.name}" />
+              <h1>{bird.name}</h1>
+              {/* <Icon category={bird.category} /> */}
+            </span>
+            {/* <AuthorInfo content={bird} /> */}
+          </header>
+          <p>{bird.description}</p>
 
-      </article>
-    </Link>
+        </article>
+      </Link>
+    </>
   )
 }
 

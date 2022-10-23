@@ -1,36 +1,34 @@
-import { Link } from 'react-router-dom'
-import styles from './NavBar.modules'
+import { NavLink } from 'react-router-dom'
+import styles from './NavBar.module.css'
 
 const NavBar = ({ user, handleLogout }) => {
 
   const publicLinks = (
     <ul>
-      <li><Link to="/login">Log In</Link></li>
-      <li><Link to="/signup">Sign Up</Link></li>
+      <li><NavLink to="/login">Log In</NavLink></li>
+      <li><NavLink to="/signup">Sign Up</NavLink></li>
     </ul>
   )
 
-      //! uncomment the below user.name line when backend is connecting
   const protectedLinks = (
     <ul>
       {/* <li>Welcome, {user.name}</li> */} 
-      <li><Link to="/profiles">Profiles</Link></li>
-      <li><Link to="/birds">Birds</Link></li>
-      <li><Link to="/birds/new">Add a Bird</Link></li>
+      <li><NavLink to="/profiles">Profiles</NavLink></li>
+      <li><NavLink to="/birds">Birds</NavLink></li>
+      <li><NavLink to="/birds/new">Add a Bird</NavLink></li>
 
-      <li><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
-      <li><Link to="/changePassword">Change Password</Link></li>
+      <li><NavLink to="" onClick={handleLogout}>LOG OUT</NavLink></li>
+      <li><NavLink to="/changePassword">Change Password</NavLink></li>
     </ul>
   )
 
   return (
     <nav className={styles.container}>
-      {/* <NavLink to={'/'}><img src={Logo} alt="Logo" /></NavLink> */}
+      {/* <NavNavLink to={'/'}><img src={Logo} alt="Logo" /></NavNavLink> */}
       {user ? protectedLinks : publicLinks}
     </nav>
   )
 }
 
-//! need to get logo in front-end, then uncomment out return area
 
 export default NavBar

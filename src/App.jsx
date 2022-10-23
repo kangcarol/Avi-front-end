@@ -27,6 +27,8 @@ import QuestionDetails from './pages/QuestionDetails/QuestionDetails'
 import QuestionNew from './pages/QuestionNew/QuestionNew'
 import QuestionEdit from './pages/QuestionEdit/QuestionEdit'
 
+import AnswerEdit from './pages/AnswerEdit/AnswerEdit'
+
 import SupplyList from './pages/SupplyList/SupplyList'
 import SupplyListDetails from './pages/SupplyListDetails/SupplyListDetails'
 import SupplyListNew from './pages/SupplyListNew/SupplyListNew'
@@ -65,7 +67,6 @@ const App = () => {
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
   }
-
 
 
   // const handleAddToWishlist = async (wishListData??????) => {
