@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 
 // page components
@@ -8,6 +8,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import BirdList from './pages/BirdList/BirdList'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -15,6 +16,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as birdService from './services/birdService'
 
 // styles
 import './App.css'
@@ -22,6 +24,8 @@ import './App.css'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
+
+  const [birds, setBirds] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -32,6 +36,16 @@ const App = () => {
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
   }
+
+  useEffect(() => {
+    console.log("The useEffect is running");
+    const fetchAllBirds = async () => {
+      console.log('The Fetch All Birds function is running')
+      const data = await birdService.index()
+      setBirds(data)
+    }
+    if (user) fetchAllBirds()
+  }, [user])
 
   return (
     <>
@@ -62,6 +76,15 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/birds"
+          element={
+            <ProtectedRoute user={user}>
+              <BirdList birds={birds}/>
+            </ProtectedRoute>
+          }
+        />
+
       </Routes>
     </>
   )
