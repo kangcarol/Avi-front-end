@@ -11,6 +11,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import BirdList from './pages/BirdList/BirdList'
 import BirdDetails from './pages/BirdDetails/BirdDetails'
 import BirdNew from './pages/BirdNew/BirdNew'
+import BirdEdit from './pages/BirdEdit/BirdEdit'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -52,6 +53,16 @@ const App = () => {
     navigate('/birds')
   }
 
+
+  const handleUpdateBird = async (birdData) => {
+    // birdData._id will be 634daa34dc0dfecfbb5767de
+    const updatedBird = await birdService.update(birdData)
+    const updatedBirdsData = birds.map(bird => {
+      return birdData._id === bird._id ? updatedBird : bird
+    })
+    setBirds(updatedBirdsData)
+    navigate('/birds')
+  }
 
   useEffect(() => {
     console.log("The useEffect is running");
@@ -117,6 +128,12 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+
+        <Route path="/birds/:id/edit" element={
+          <ProtectedRoute user={user}>
+            <BirdEdit handleUpdateBird={handleUpdateBird} />
+          </ProtectedRoute>
+        } />
 
       </Routes>
     </>

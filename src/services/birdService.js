@@ -49,11 +49,28 @@ const create = async (birdData) => {
   }
 }
 
+const update = async (birdData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${birdData._id}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(birdData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
 //! don't forget to export
 export {
   index,
   show,
   create,
-  // update,
+  update,
   // deleteBird,
 }
