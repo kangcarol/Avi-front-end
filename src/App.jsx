@@ -42,7 +42,7 @@ import * as profileService from './services/profileService'
 import * as birdService from './services/birdService'
 import * as eventService from './services/eventService'
 import * as adviceService from './services/adviceService'
-import * as supplyService from './services/supplyService'
+import * as supplyListService from './services/supplyListService'
 
 // styles
 import './App.css'
@@ -52,6 +52,9 @@ const App = () => {
   const navigate = useNavigate()
 
   const [birds, setBirds] = useState([])
+  const [events, setEvents] = useState([])
+  const [supplyLists, setSupplyLists] = useState([])
+  const [advice, setAdvice] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -76,10 +79,7 @@ const App = () => {
     navigate('/birds')
   }
 
-  // const handleAddToWishlist = async (birdData) => {
-  //   const addToWishlist = await birdService.___(birdData)
-  //   setWishlist([])
-
+  // const handleAddToWishlist = async (wishListData??????) => {
   // }
 
 
@@ -109,6 +109,99 @@ const App = () => {
     if (user) fetchAllBirds()
   }, [user])
 
+  const handleAddEvent = async (eventData) => {
+    const newEvent = await eventService.create(eventData)
+    setEvents([newEvent, ...events])
+    navigate('/events')
+  }
+
+  const handleUpdateEvent = async (eventData) => {
+    const updatedEvent = await eventService.update(eventData)
+    const updatedEventsData = events.map(event => {
+      return eventData._id === event._id ? updatedEvent : event
+    })
+    setEvents(updatedEventsData)
+    navigate('/events')
+  }
+
+  const handleDeleteEvent = async (id) => {
+    const deletedEvent = await eventService.deleteEvent(id)
+    setEvents(events.filter(b => b._id !== deletedEvent._id))
+    navigate('/events')
+  }
+
+  useEffect(() => {
+    console.log("The useEffect is running");
+    const fetchAllEvents = async () => {
+      console.log('The Fetch All function is running')
+      const data = await eventService.index()
+      setEvents(data)
+    }
+    if (user) fetchAllEvents()
+  }, [user])
+  
+  const handleAddSupplyList = async (supplyListData) => {
+    const newSupplyList = await supplyListService.create(supplyListData)
+    setSupplyLists([newSupplyList, ...supplyLists])
+    navigate('/supplylists')
+  }
+  
+  const handleUpdateSupplyList = async (supplyListData) => {
+    const updatedSupplyList = await supplyListService.update(supplyListData)
+    const updatedSupplyListsData = supplyLists.map(supplyList => {
+      return supplyListData._id === supplyList._id ? updatedSupplyList : supplyList
+    })
+    setSupplyLists(updatedSupplyListsData)
+    navigate('/supplylists')
+  }
+  
+  const handleDeleteSupplyList = async (id) => {
+    const deletedSupplyList = await supplyListService.deleteSupplyList(id)
+    setSupplyLists(supplyLists.filter(b => b._id !== deletedSupplyList._id))
+    navigate('/supplylists')
+  }
+  
+  useEffect(() => {
+    console.log("The useEffect is running");
+    const fetchAllSupplyLists = async () => {
+      console.log('The Fetch All function is running')
+      const data = await supplyListService.index()
+      setSupplyLists(data)
+    }
+    if (user) fetchAllSupplyLists()
+  }, [user])
+  
+    const handleAddAdvice = async (adviceData) => {
+      const newAdvice = await adviceService.create(adviceData)
+      setAdvice([newAdvice, ...advice])
+      navigate('/advice')
+    }
+  
+    const handleUpdateAdvice = async (adviceData) => {
+      const updatedAdvice = await adviceService.update(adviceData)
+      const updatedAdviceData = advice.map(adviceEach => {
+        return adviceData._id === adviceEach._id ? updatedAdvice : adviceEach
+      })
+      setAdvice(updatedAdviceData)
+      navigate('/advice')
+    }
+  
+    const handleDeleteAdvice = async (id) => {
+      const deletedAdvice = await adviceService.deleteAdvice(id)
+      setAdvice(advice.filter(b => b._id !== deletedAdvice._id))
+      navigate('/advice')
+    }
+  
+    useEffect(() => {
+      console.log("The useEffect is running");
+      const fetchAllAdvice = async () => {
+        console.log('The Fetch All function is running')
+        const data = await adviceService.index()
+        setAdvice(data)
+      }
+      if (user) fetchAllAdvice()
+    }, [user])
+  
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
