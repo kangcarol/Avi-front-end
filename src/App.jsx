@@ -64,6 +64,12 @@ const App = () => {
     navigate('/birds')
   }
 
+  const handleDeleteBird = async (id) => {
+    const deletedBird = await birdService.deleteBird(id)
+    setBirds(birds.filter(b => b._id !== deletedBird._id))
+    navigate('/birds')
+  }
+
   useEffect(() => {
     console.log("The useEffect is running");
     const fetchAllBirds = async () => {
@@ -115,7 +121,8 @@ const App = () => {
           path="/birds/:id"
           element={
             <ProtectedRoute user={user}>
-              <BirdDetails user={user} />
+              <BirdDetails user={user} 
+              handleDeleteBird={handleDeleteBird}/>
             </ProtectedRoute>
           }
         />
@@ -129,7 +136,9 @@ const App = () => {
           }
         />
 
-        <Route path="/birds/:id/edit" element={
+        <Route 
+          path="/birds/:id/edit" 
+          element={
           <ProtectedRoute user={user}>
             <BirdEdit handleUpdateBird={handleUpdateBird} />
           </ProtectedRoute>

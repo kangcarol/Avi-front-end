@@ -65,12 +65,24 @@ const update = async (birdData) => {
   }
 }
 
+const deleteBird = async (id) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
 
-//! don't forget to export
 export {
   index,
   show,
   create,
   update,
-  // deleteBird,
+  deleteBird,
 }
