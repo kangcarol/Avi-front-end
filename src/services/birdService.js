@@ -1,10 +1,10 @@
 import * as tokenService from "./tokenService"
 
-const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/birds` //!check route
+const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/birds` //! double check route
 
 const index = async () => {
   try {
-    // GET http://localhost:3001/birds //!check route
+    // GET http://localhost:3001/birds
     const res = await fetch(BASE_URL, {
       headers: { 'Authorization': `Bearer ${tokenService.getToken()}`}
     })
