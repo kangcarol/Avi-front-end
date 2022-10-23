@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 
 // page components
@@ -9,12 +9,42 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 
+import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
+import ProfileEdit from './pages/ProfileEdit/ProfileEdit'
+
+import BirdList from './pages/BirdList/BirdList'
+import BirdDetails from './pages/BirdDetails/BirdDetails'
+import BirdNew from './pages/BirdNew/BirdNew'
+import BirdEdit from './pages/BirdEdit/BirdEdit'
+
+import EventList from './pages/EventList/EventList'
+import EventDetails from './pages/EventDetails/EventDetails'
+import EventNew from './pages/EventNew/EventNew'
+import EventEdit from './pages/EventEdit/EventEdit'
+
+import QuestionList from './pages/QuestionList/QuestionList'
+import QuestionDetails from './pages/QuestionDetails/QuestionDetails'
+import QuestionNew from './pages/QuestionNew/QuestionNew'
+import QuestionEdit from './pages/QuestionEdit/QuestionEdit'
+
+import AnswerEdit from './pages/AnswerEdit/AnswerEdit'
+
+import SupplyList from './pages/SupplyList/SupplyList'
+import SupplyListDetails from './pages/SupplyListDetails/SupplyListDetails'
+import SupplyListNew from './pages/SupplyListNew/SupplyListNew'
+import SupplyListEdit from './pages/SupplyListEdit/SupplyListEdit'
+
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as profileService from './services/profileService'
+import * as birdService from './services/birdService'
+import * as eventService from './services/eventService'
+import * as questionService from './services/questionService'
+import * as supplyListService from './services/supplyListService'
 
 // styles
 import './App.css'
@@ -22,6 +52,11 @@ import './App.css'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
+
+  const [birds, setBirds] = useState([])
+  const [events, setEvents] = useState([])
+  const [supplyLists, setSupplyLists] = useState([])
+  const [questions, setQuestions] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -33,6 +68,141 @@ const App = () => {
     setUser(authService.getUser())
   }
 
+
+  // const handleAddToWishlist = async (wishListData??????) => {
+  // }
+
+
+  const handleAddBird = async (birdData) => {
+    // birdData will have a shape of:
+    //   {
+    //     "name": "string",
+    //     "descripton": "string",
+    //     etc etc...
+    //   }
+    const newBird = await birdService.create(birdData)
+    setBirds([newBird, ...birds])
+    navigate('/birds')
+  }
+
+  const handleUpdateBird = async (birdData) => {
+    // birdData._id will be 634daa34dc0dfecfbb5767de, as example
+    const updatedBird = await birdService.update(birdData)
+    const updatedBirdsData = birds.map(bird => {
+      return birdData._id === bird._id ? updatedBird : bird
+    })
+    setBirds(updatedBirdsData)
+    navigate('/birds')
+  }
+
+  const handleDeleteBird = async (id) => {
+    const deletedBird = await birdService.deleteBird(id)
+    setBirds(birds.filter(b => b._id !== deletedBird._id))
+    navigate('/birds')
+  }
+
+  useEffect(() => {
+    console.log("The useEffect is running");
+    const fetchAllBirds = async () => {
+      console.log('The Fetch All Birds function is running')
+      const data = await birdService.index()
+      setBirds(data)
+    }
+    if (user) fetchAllBirds()
+  }, [user])
+
+  const handleAddEvent = async (eventData) => {
+    const newEvent = await eventService.create(eventData)
+    setEvents([newEvent, ...events])
+    navigate('/events')
+  }
+
+  const handleUpdateEvent = async (eventData) => {
+    const updatedEvent = await eventService.update(eventData)
+    const updatedEventsData = events.map(event => {
+      return eventData._id === event._id ? updatedEvent : event
+    })
+    setEvents(updatedEventsData)
+    navigate('/events')
+  }
+
+  const handleDeleteEvent = async (id) => {
+    const deletedEvent = await eventService.deleteEvent(id)
+    setEvents(events.filter(b => b._id !== deletedEvent._id))
+    navigate('/events')
+  }
+
+  useEffect(() => {
+    console.log("The useEffect is running");
+    const fetchAllEvents = async () => {
+      console.log('The Fetch All function is running')
+      const data = await eventService.index()
+      setEvents(data)
+    }
+    if (user) fetchAllEvents()
+  }, [user])
+  
+  const handleAddSupplyList = async (supplyListData) => {
+    const newSupplyList = await supplyListService.create(supplyListData)
+    setSupplyLists([newSupplyList, ...supplyLists])
+    navigate('/supplylists')
+  }
+  
+  const handleUpdateSupplyList = async (supplyListData) => {
+    const updatedSupplyList = await supplyListService.update(supplyListData)
+    const updatedSupplyListsData = supplyLists.map(supplyList => {
+      return supplyListData._id === supplyList._id ? updatedSupplyList : supplyList
+    })
+    setSupplyLists(updatedSupplyListsData)
+    navigate('/supplylists')
+  }
+  
+  const handleDeleteSupplyList = async (id) => {
+    const deletedSupplyList = await supplyListService.deleteSupplyList(id)
+    setSupplyLists(supplyLists.filter(b => b._id !== deletedSupplyList._id))
+    navigate('/supplylists')
+  }
+  
+  useEffect(() => {
+    console.log("The useEffect is running");
+    const fetchAllSupplyLists = async () => {
+      console.log('The Fetch All function is running')
+      const data = await supplyListService.index()
+      setSupplyLists(data)
+    }
+    if (user) fetchAllSupplyLists()
+  }, [user])
+  
+  const handleAddQuestion = async (questionData) => {
+    const newQuestion = await questionService.create(questionData)
+    setQuestions([newQuestion, ...questions])
+    navigate('/questions')
+  }
+  const handleUpdateQuestion = async (questionData) => {
+    const updatedQuestion = await questionService.update(questionData)
+    const updatedQuestionsData = questions.map(question => {
+      return questionData._id === question._id ? updatedQuestion : question
+    })
+    setQuestions(updatedQuestionsData)
+    navigate('/questions')
+  }
+
+  const handleDeleteQuestion = async (id) => {
+    const deletedQuestion = await questionService.deleteQuestion(id)
+    setQuestions(questions.filter(b => b._id !== deletedQuestion._id))
+    navigate('/questions')
+  }
+
+  useEffect(() => {
+    console.log("The useEffect is running");
+    const fetchAllQuestions = async () => {
+      console.log('The Fetch All function is running')
+      const data = await questionService.index()
+      setQuestions(data)
+    }
+    if (user) fetchAllQuestions()
+  }, [user])
+  
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -62,6 +232,156 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+
+        <Route
+          path="/birds"
+          element={
+            <ProtectedRoute user={user}>
+              <BirdList birds={birds}
+              // addToWishlist={addToWishlist}
+              />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/birds/:id"
+          element={
+            <ProtectedRoute user={user}>
+              <BirdDetails user={user} 
+              handleDeleteBird={handleDeleteBird}/>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route 
+          path="/birds/new"
+          element={
+            <ProtectedRoute user={user}>
+              <BirdNew handleAddBird={handleAddBird} />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route 
+          path="/birds/:id/edit" 
+          element={
+          <ProtectedRoute user={user}>
+            <BirdEdit handleUpdateBird={handleUpdateBird} />
+          </ProtectedRoute>
+        }
+        />
+
+        <Route
+          path="/events"
+          element={
+            <ProtectedRoute user={user}>
+              <EventList events={events}
+              />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/events/:id"
+          element={
+            <ProtectedRoute user={user}>
+              <EventDetails user={user} 
+              handleDeleteEvent={handleDeleteEvent}/>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route 
+          path="/events/new"
+          element={
+            <ProtectedRoute user={user}>
+              <EventNew handleAddEvent={handleAddEvent} />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route 
+          path="/events/:id/edit" 
+          element={
+          <ProtectedRoute user={user}>
+            <EventEdit handleUpdateEvent={handleUpdateEvent} />
+          </ProtectedRoute>
+        } 
+        />
+        
+        <Route
+          path="/supplylist"
+          element={
+            <ProtectedRoute user={user}>
+              <SupplyList supplyLists={supplyLists}
+              />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/supplylists/:id"
+          element={
+            <ProtectedRoute user={user}>
+              <SupplyListDetails user={user} 
+              handleDeleteSupplyList={handleDeleteSupplyList}/>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route 
+          path="/supplylists/new"
+          element={
+            <ProtectedRoute user={user}>
+              <SupplyListNew handleAddSupplyList={handleAddSupplyList} />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route 
+          path="/supplylists/:id/edit" 
+          element={
+          <ProtectedRoute user={user}>
+            <SupplyListEdit handleUpdateSupplyList={handleUpdateSupplyList} />
+          </ProtectedRoute>
+        }
+        />
+        
+        <Route
+          path="/questions"
+          element={
+            <ProtectedRoute user={user}>
+              <QuestionList questions={questions}
+              />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/questions/:id"
+          element={
+            <ProtectedRoute user={user}>
+              <QuestionDetails user={user} 
+              handleDeleteQuestion={handleDeleteQuestion}/>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route 
+          path="/questions/new"
+          element={
+            <ProtectedRoute user={user}>
+              <QuestionNew handleAddQuestion={handleAddQuestion} />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route 
+          path="/questions/:id/edit" 
+          element={
+          <ProtectedRoute user={user}>
+            <QuestionEdit handleUpdateBird={handleUpdateQuestion} />
+          </ProtectedRoute>
+        }
+        />
+
       </Routes>
     </>
   )
