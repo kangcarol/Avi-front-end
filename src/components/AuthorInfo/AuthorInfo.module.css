@@ -1,4 +1,4 @@
-/* .container {
+.container {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -22,4 +22,4 @@
 .container section {
   display: flex;
   flex-direction: column;
-} */
+}

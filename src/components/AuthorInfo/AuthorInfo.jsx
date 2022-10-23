@@ -1,6 +1,6 @@
 import styles from './AuthorInfo.module.css'
 // import DateCard from "../DateCard/DateCard"
-import ProfileIcon from '../../assets/icons/profile.png'
+import ProfileIcon from '../../assets/branding/AVI-profile-icon.png'
 
 const AuthorInfo = ({ content }) => {
   const photo = content.author.photo ? content.author.photo : ProfileIcon

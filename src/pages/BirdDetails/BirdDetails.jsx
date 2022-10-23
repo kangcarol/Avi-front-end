@@ -30,19 +30,19 @@ const BirdDetails = (props) => {
     <main className={styles.container}>
       <article>
         <header>
-          <h3>{blog.category.toUpperCase()}</h3>
-          <h1>{blog.title}</h1>
+          {/* <h3>{bird.name.toUpperCase()}</h3> */}
+          <h1>{bird.nametoUpperCase()}</h1>
           <span>
-            <AuthorInfo content={blog} />
-            {blog.author._id === props.user.profile &&
+            <AuthorInfo content={bird} />
+            {bird.author._id === props.user.profile &&
               <>
-                <Link to={`/blogs/${id}/edit`} state={blog}>Edit</Link>
-                <button onClick={() => props.handleDeleteBlog(id)}>Delete</button>
+                <Link to={`/birds/${id}/edit`} state={bird}>Edit</Link>
+                <button onClick={() => props.handleDeleteBird(id)}>Delete</button>
               </>
             }
           </span>
         </header>
-        <p>{blog.text}</p>
+        <p>{bird.description}</p>
       </article>
       <section>
         <h1>Comments</h1>
@@ -51,4 +51,4 @@ const BirdDetails = (props) => {
   )
 }
 
-export default BlogDetails
+export default BirdDetails
