@@ -24,10 +24,10 @@ import AdviceDetails from './pages/AdviceDetails/AdviceDetails'
 import AdviceNew from './pages/AdviceNew/AdviceNew'
 import AdviceEdit from './pages/AdviceEdit/AdviceEdit'
 
-import AdviceList from './pages/SupplyList/SupplyList'
-import AdviceDetails from './pages/SupplyDetails/SupplyDetails'
-import AdviceNew from './pages/SupplyNew/SupplyNew'
-import AdviceEdit from './pages/SupplyEdit/SupplyEdit'
+import SupplyList from './pages/SupplyList/SupplyList'
+import SupplyListDetails from './pages/SupplyListDetails/SupplyListDetails'
+import SupplyListNew from './pages/SupplyListNew/SupplyListNew'
+import SupplyListEdit from './pages/SupplyListEdit/SupplyListEdit'
 
 import Profiles from './pages/Profiles/Profiles'
 import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
@@ -139,12 +139,122 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+
         <Route
           path="/birds"
           element={
             <ProtectedRoute user={user}>
               <BirdList birds={birds}
               // addToWishlist={addToWishlist}
+              />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/birds/:id"
+          element={
+            <ProtectedRoute user={user}>
+              <BirdDetails user={user} 
+              handleDeleteBird={handleDeleteBird}/>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route 
+          path="/birds/new"
+          element={
+            <ProtectedRoute user={user}>
+              <BirdNew handleAddBird={handleAddBird} />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route 
+          path="/birds/:id/edit" 
+          element={
+          <ProtectedRoute user={user}>
+            <BirdEdit handleUpdateBird={handleUpdateBird} />
+          </ProtectedRoute>
+        }
+        />
+
+        <Route
+          path="/events"
+          element={
+            <ProtectedRoute user={user}>
+              <BirdList birds={birds}
+              />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/events/:id"
+          element={
+            <ProtectedRoute user={user}>
+              <BirdDetails user={user} 
+              handleDeleteBird={handleDeleteBird}/>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route 
+          path="/events/new"
+          element={
+            <ProtectedRoute user={user}>
+              <BirdNew handleAddBird={handleAddBird} />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route 
+          path="/events/:id/edit" 
+          element={
+          <ProtectedRoute user={user}>
+            <BirdEdit handleUpdateBird={handleUpdateBird} />
+          </ProtectedRoute>
+        } 
+        />
+        
+        <Route
+          path="/supplies"
+          element={
+            <ProtectedRoute user={user}>
+              <BirdList birds={birds}
+              />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/supplies/:id"
+          element={
+            <ProtectedRoute user={user}>
+              <BirdDetails user={user} 
+              handleDeleteBird={handleDeleteBird}/>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route 
+          path="/birds/new"
+          element={
+            <ProtectedRoute user={user}>
+              <BirdNew handleAddBird={handleAddBird} />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route 
+          path="/birds/:id/edit" 
+          element={
+          <ProtectedRoute user={user}>
+            <BirdEdit handleUpdateBird={handleUpdateBird} />
+          </ProtectedRoute>
+        } />
+        <Route
+          path="/birds"
+          element={
+            <ProtectedRoute user={user}>
+              <BirdList birds={birds}
               />
             </ProtectedRoute>
           }
