@@ -10,13 +10,13 @@ const NavBar = ({ user, handleLogout }) => {
     </ul>
   )
 
-
+      //! uncomment the below user.name line when backend is connecting
   const protectedLinks = (
     <ul>
       {/* <li>Welcome, {user.name}</li> */} 
-      //! uncomment this out when backend is connecting
       <li><Link to="/profiles">Profiles</Link></li>
       <li><Link to="/birds">Birds</Link></li>
+      <li><Link to="/blogs/new">Add a Bird</Link></li>
 
       <li><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
       <li><Link to="/changePassword">Change Password</Link></li>

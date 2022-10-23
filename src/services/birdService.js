@@ -10,7 +10,7 @@ const index = async () => {
     })
     return res.json()
   } catch (error) {
-    console.log(error)
+    console.ird(error)
   }
 }
 
@@ -22,6 +22,29 @@ const show = async (id) => {
     })
     return res.json()
   } catch (error) {
+    console.ird(error)
+  }
+}
+
+const create = async (birdData) => {
+  // birdData will have a shape of:
+//   {
+//     "name": "string",
+//     "description": "string",
+//     etc etc
+//   }
+  try {
+    // POST http://localhost:3001/birds
+    const res = await fetch(BASE_URL, {
+      method: 'POST',
+      headers: {
+        "Authorization": `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(birdData)
+    })
+    return res.json()
+  } catch (error) {
     console.log(error)
   }
 }
@@ -30,7 +53,7 @@ const show = async (id) => {
 export {
   index,
   show,
-  // create,
+  create,
   // update,
   // deleteBird,
 }

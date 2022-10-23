@@ -1,4 +1,4 @@
-/* .container {
+.container {
   gap: 14px;
   width: 100%;
   display: grid;
@@ -22,4 +22,4 @@
   .container {
     grid-template-columns: repeat(4, 1fr);
   }
-} */
+}

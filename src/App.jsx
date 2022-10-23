@@ -10,6 +10,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import BirdList from './pages/BirdList/BirdList'
 import BirdDetails from './pages/BirdDetails/BirdDetails'
+import BirdNew from './pages/BirdNew/BirdNew'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -37,6 +38,20 @@ const App = () => {
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
   }
+
+
+  const handleAddBird = async (birdData) => {
+    // birdData will have a shape of:
+    //   {
+    //     "name": "string",
+    //     "descripton": "string",
+    //     etc etc...
+    //   }
+    const newBird = await birdService.create(birdData)
+    setBirds([newBird, ...birds])
+    navigate('/birds')
+  }
+
 
   useEffect(() => {
     console.log("The useEffect is running");
@@ -86,10 +101,19 @@ const App = () => {
           }
         />
         <Route
-          path="/blogs/:id"
+          path="/birds/:id"
           element={
             <ProtectedRoute user={user}>
               <BirdDetails user={user} />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route 
+          path="/birds/new"
+          element={
+            <ProtectedRoute user={user}>
+              <BirdNew handleAddBird={handleAddBird} />
             </ProtectedRoute>
           }
         />
