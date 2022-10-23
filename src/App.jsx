@@ -9,6 +9,9 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 
+import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
+import ProfileEdit from './pages/ProfileEdit/ProfileEdit'
+
 import BirdList from './pages/BirdList/BirdList'
 import BirdDetails from './pages/BirdDetails/BirdDetails'
 import BirdNew from './pages/BirdNew/BirdNew'
@@ -28,10 +31,6 @@ import SupplyList from './pages/SupplyList/SupplyList'
 import SupplyListDetails from './pages/SupplyListDetails/SupplyListDetails'
 import SupplyListNew from './pages/SupplyListNew/SupplyListNew'
 import SupplyListEdit from './pages/SupplyListEdit/SupplyListEdit'
-
-import Profiles from './pages/Profiles/Profiles'
-import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
-import ProfileEdit from './pages/ProfileEdit/ProfileEdit'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -85,7 +84,7 @@ const App = () => {
 
 
   const handleUpdateBird = async (birdData) => {
-    // birdData._id will be 634daa34dc0dfecfbb5767de
+    // birdData._id will be 634daa34dc0dfecfbb5767de, as example
     const updatedBird = await birdService.update(birdData)
     const updatedBirdsData = birds.map(bird => {
       return birdData._id === bird._id ? updatedBird : bird
@@ -182,7 +181,7 @@ const App = () => {
           path="/events"
           element={
             <ProtectedRoute user={user}>
-              <BirdList birds={birds}
+              <EventList events={events}
               />
             </ProtectedRoute>
           }
@@ -191,8 +190,8 @@ const App = () => {
           path="/events/:id"
           element={
             <ProtectedRoute user={user}>
-              <BirdDetails user={user} 
-              handleDeleteBird={handleDeleteBird}/>
+              <EventDetails user={user} 
+              handleDeleteEvent={handleDeleteEvent}/>
             </ProtectedRoute>
           }
         />
@@ -201,7 +200,7 @@ const App = () => {
           path="/events/new"
           element={
             <ProtectedRoute user={user}>
-              <BirdNew handleAddBird={handleAddBird} />
+              <EventNew handleAddEvent={handleAddEvent} />
             </ProtectedRoute>
           }
         />
@@ -210,81 +209,84 @@ const App = () => {
           path="/events/:id/edit" 
           element={
           <ProtectedRoute user={user}>
-            <BirdEdit handleUpdateBird={handleUpdateBird} />
+            <EventEdit handleUpdateEvent={handleUpdateEvent} />
           </ProtectedRoute>
         } 
         />
         
         <Route
-          path="/supplies"
+          path="/supplylist"
           element={
             <ProtectedRoute user={user}>
-              <BirdList birds={birds}
+              <SupplyList supplyLists={supplyLists}
               />
             </ProtectedRoute>
           }
         />
         <Route
-          path="/supplies/:id"
+          path="/supplylists/:id"
           element={
             <ProtectedRoute user={user}>
-              <BirdDetails user={user} 
-              handleDeleteBird={handleDeleteBird}/>
+              <SupplyListDetails user={user} 
+              handleDeleteSupplyList={handleDeleteSupplyList}/>
             </ProtectedRoute>
           }
         />
 
         <Route 
-          path="/birds/new"
+          path="/supplylists/new"
           element={
             <ProtectedRoute user={user}>
-              <BirdNew handleAddBird={handleAddBird} />
+              <SupplyListNew handleAddSupplyList={handleAddSupplyList} />
             </ProtectedRoute>
           }
         />
 
         <Route 
-          path="/birds/:id/edit" 
+          path="/supplylists/:id/edit" 
           element={
           <ProtectedRoute user={user}>
-            <BirdEdit handleUpdateBird={handleUpdateBird} />
+            <SupplyListEdit handleUpdateSupplyList={handleUpdateSupplyList} />
           </ProtectedRoute>
-        } />
+        }
+        />
+        
         <Route
-          path="/birds"
+          path="/advice"
           element={
             <ProtectedRoute user={user}>
-              <BirdList birds={birds}
+              <AdviceList advice={advice}
               />
             </ProtectedRoute>
           }
         />
         <Route
-          path="/birds/:id"
+          path="/advice/:id"
           element={
             <ProtectedRoute user={user}>
-              <BirdDetails user={user} 
-              handleDeleteBird={handleDeleteBird}/>
+              <AdviceDetails user={user} 
+              handleDeleteAdvice={handleDeleteAdvice}/>
             </ProtectedRoute>
           }
         />
 
         <Route 
-          path="/birds/new"
+          path="/advice/new"
           element={
             <ProtectedRoute user={user}>
-              <BirdNew handleAddBird={handleAddBird} />
+              <AdviceNew handleAddBird={handleAddAdvice} />
             </ProtectedRoute>
           }
         />
 
         <Route 
-          path="/birds/:id/edit" 
+          path="/advice/:id/edit" 
           element={
           <ProtectedRoute user={user}>
-            <BirdEdit handleUpdateBird={handleUpdateBird} />
+            <AdviceEdit handleUpdateBird={handleUpdateAdvice} />
           </ProtectedRoute>
-        } />
+        }
+        />
 
       </Routes>
     </>
