@@ -8,10 +8,30 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+
 import BirdList from './pages/BirdList/BirdList'
 import BirdDetails from './pages/BirdDetails/BirdDetails'
 import BirdNew from './pages/BirdNew/BirdNew'
 import BirdEdit from './pages/BirdEdit/BirdEdit'
+
+import EventList from './pages/EventList/EventList'
+import EventDetails from './pages/EventDetails/EventDetails'
+import EventNew from './pages/EventNew/EventNew'
+import EventEdit from './pages/EventEdit/EventEdit'
+
+import AdviceList from './pages/AdviceList/AdviceList'
+import AdviceDetails from './pages/AdviceDetails/AdviceDetails'
+import AdviceNew from './pages/AdviceNew/AdviceNew'
+import AdviceEdit from './pages/AdviceEdit/AdviceEdit'
+
+import AdviceList from './pages/SupplyList/SupplyList'
+import AdviceDetails from './pages/SupplyDetails/SupplyDetails'
+import AdviceNew from './pages/SupplyNew/SupplyNew'
+import AdviceEdit from './pages/SupplyEdit/SupplyEdit'
+
+import Profiles from './pages/Profiles/Profiles'
+import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
+import ProfileEdit from './pages/ProfileEdit/ProfileEdit'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -19,7 +39,11 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as profileService from './services/profileService'
 import * as birdService from './services/birdService'
+import * as eventService from './services/eventService'
+import * as adviceService from './services/adviceService'
+import * as supplyService from './services/supplyService'
 
 // styles
 import './App.css'
@@ -52,6 +76,12 @@ const App = () => {
     setBirds([newBird, ...birds])
     navigate('/birds')
   }
+
+  // const handleAddToWishlist = async (birdData) => {
+  //   const addToWishlist = await birdService.___(birdData)
+  //   setWishlist([])
+
+  // }
 
 
   const handleUpdateBird = async (birdData) => {
@@ -113,7 +143,9 @@ const App = () => {
           path="/birds"
           element={
             <ProtectedRoute user={user}>
-              <BirdList birds={birds}/>
+              <BirdList birds={birds}
+              // addToWishlist={addToWishlist}
+              />
             </ProtectedRoute>
           }
         />

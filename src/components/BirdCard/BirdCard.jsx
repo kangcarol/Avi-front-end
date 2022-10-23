@@ -13,17 +13,18 @@ const BirdCard = ({ bird }) => {
           <span>
             <img src={bird.image} className="birdPhoto" alt="{bird.name}" />
             <h1>{bird.name}</h1>
-            {/* <Icon category={blog.category} /> */}
+            {/* <Icon category={bird.category} /> */}
           </span>
           {/* <AuthorInfo content={bird} /> */}
         </header>
         <p>{bird.description}</p>
-        <button>+ wishlist</button>
+{/* 
+        <button onClick={() => props.addToWishlist({bird})}>+ wishlist</button> */}
+
       </article>
     </Link>
   )
 }
 
 //! need onclick for wishlist button
-//! need <a> tag href for Bird Name, taking to the BirdDetail page
 export default BirdCard
