@@ -22,10 +22,10 @@ import EventDetails from './pages/EventDetails/EventDetails'
 import EventNew from './pages/EventNew/EventNew'
 import EventEdit from './pages/EventEdit/EventEdit'
 
-import AdviceList from './pages/AdviceList/AdviceList'
-import AdviceDetails from './pages/AdviceDetails/AdviceDetails'
-import AdviceNew from './pages/AdviceNew/AdviceNew'
-import AdviceEdit from './pages/AdviceEdit/AdviceEdit'
+import QuestionList from './pages/QuestionList/QuestionList'
+import QuestionDetails from './pages/QuestionDetails/QuestionDetails'
+import QuestionNew from './pages/QuestionNew/QuestionNew'
+import QuestionEdit from './pages/QuestionEdit/QuestionEdit'
 
 import SupplyList from './pages/SupplyList/SupplyList'
 import SupplyListDetails from './pages/SupplyListDetails/SupplyListDetails'
@@ -41,7 +41,7 @@ import * as authService from './services/authService'
 import * as profileService from './services/profileService'
 import * as birdService from './services/birdService'
 import * as eventService from './services/eventService'
-import * as adviceService from './services/adviceService'
+import * as questionService from './services/questionService'
 import * as supplyListService from './services/supplyListService'
 
 // styles
@@ -54,7 +54,7 @@ const App = () => {
   const [birds, setBirds] = useState([])
   const [events, setEvents] = useState([])
   const [supplyLists, setSupplyLists] = useState([])
-  const [advice, setAdvice] = useState([])
+  const [questions, setQuestions] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -65,6 +65,11 @@ const App = () => {
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
   }
+
+
+
+  // const handleAddToWishlist = async (wishListData??????) => {
+  // }
 
 
   const handleAddBird = async (birdData) => {
@@ -78,10 +83,6 @@ const App = () => {
     setBirds([newBird, ...birds])
     navigate('/birds')
   }
-
-  // const handleAddToWishlist = async (wishListData??????) => {
-  // }
-
 
   const handleUpdateBird = async (birdData) => {
     // birdData._id will be 634daa34dc0dfecfbb5767de, as example
@@ -171,36 +172,35 @@ const App = () => {
     if (user) fetchAllSupplyLists()
   }, [user])
   
-    const handleAddAdvice = async (adviceData) => {
-      const newAdvice = await adviceService.create(adviceData)
-      setAdvice([newAdvice, ...advice])
-      navigate('/advice')
+  const handleAddQuestion = async (questionData) => {
+    const newQuestion = await questionService.create(questionData)
+    setQuestions([newQuestion, ...questions])
+    navigate('/questions')
+  }
+  const handleUpdateQuestion = async (questionData) => {
+    const updatedQuestion = await questionService.update(questionData)
+    const updatedQuestionsData = questions.map(question => {
+      return questionData._id === question._id ? updatedQuestion : question
+    })
+    setQuestions(updatedQuestionsData)
+    navigate('/questions')
+  }
+
+  const handleDeleteQuestion = async (id) => {
+    const deletedQuestion = await questionService.deleteQuestion(id)
+    setQuestions(questions.filter(b => b._id !== deletedQuestion._id))
+    navigate('/questions')
+  }
+
+  useEffect(() => {
+    console.log("The useEffect is running");
+    const fetchAllQuestions = async () => {
+      console.log('The Fetch All function is running')
+      const data = await questionService.index()
+      setQuestions(data)
     }
-  
-    const handleUpdateAdvice = async (adviceData) => {
-      const updatedAdvice = await adviceService.update(adviceData)
-      const updatedAdviceData = advice.map(adviceEach => {
-        return adviceData._id === adviceEach._id ? updatedAdvice : adviceEach
-      })
-      setAdvice(updatedAdviceData)
-      navigate('/advice')
-    }
-  
-    const handleDeleteAdvice = async (id) => {
-      const deletedAdvice = await adviceService.deleteAdvice(id)
-      setAdvice(advice.filter(b => b._id !== deletedAdvice._id))
-      navigate('/advice')
-    }
-  
-    useEffect(() => {
-      console.log("The useEffect is running");
-      const fetchAllAdvice = async () => {
-        console.log('The Fetch All function is running')
-        const data = await adviceService.index()
-        setAdvice(data)
-      }
-      if (user) fetchAllAdvice()
-    }, [user])
+    if (user) fetchAllQuestions()
+  }, [user])
   
   return (
     <>
@@ -345,38 +345,38 @@ const App = () => {
         />
         
         <Route
-          path="/advice"
+          path="/questions"
           element={
             <ProtectedRoute user={user}>
-              <AdviceList advice={advice}
+              <QuestionList questions={questions}
               />
             </ProtectedRoute>
           }
         />
         <Route
-          path="/advice/:id"
+          path="/questions/:id"
           element={
             <ProtectedRoute user={user}>
-              <AdviceDetails user={user} 
-              handleDeleteAdvice={handleDeleteAdvice}/>
+              <QuestionDetails user={user} 
+              handleDeleteQuestion={handleDeleteQuestion}/>
             </ProtectedRoute>
           }
         />
 
         <Route 
-          path="/advice/new"
+          path="/questions/new"
           element={
             <ProtectedRoute user={user}>
-              <AdviceNew handleAddBird={handleAddAdvice} />
+              <QuestionNew handleAddQuestion={handleAddQuestion} />
             </ProtectedRoute>
           }
         />
 
         <Route 
-          path="/advice/:id/edit" 
+          path="/questions/:id/edit" 
           element={
           <ProtectedRoute user={user}>
-            <AdviceEdit handleUpdateBird={handleUpdateAdvice} />
+            <QuestionEdit handleUpdateBird={handleUpdateQuestion} />
           </ProtectedRoute>
         }
         />
