@@ -1,6 +1,6 @@
 import * as tokenService from "./tokenService"
 
-const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/birds` //! double check route
+const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/birds` //! double check route
 
 const index = async () => {
   try {

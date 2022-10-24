@@ -29,7 +29,7 @@
 }
 
 .container button {
-  color: white;
+  color: green;
   font-weight: 600;
   margin: 21px 0px 0px 0px;
   background: var(--primary);

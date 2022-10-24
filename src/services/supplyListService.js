@@ -56,7 +56,7 @@ const update = async (supplylistData) => {
   }
 }
 
-const deleteSupplylist = async (id) => {
+const deleteSupplyList = async (id) => {
   try {
     const res = await fetch(`${BASE_URL}/${id}`, {
       method: 'DELETE',
@@ -75,5 +75,5 @@ export {
   show,
   create,
   update,
-  deleteSupplylist,
+  deleteSupplyList,
 }
