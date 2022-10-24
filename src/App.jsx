@@ -164,9 +164,8 @@ const App = () => {
   }
   
   useEffect(() => {
-    console.log("The useEffect is running");
+    console.log("SUPPLYLIST USEEFFECT");
     const fetchAllSupplyLists = async () => {
-      console.log('The Fetch All function is running')
       const data = await supplyListService.index()
       setSupplyLists(data)
     }
@@ -309,7 +308,7 @@ const App = () => {
         />
         
         <Route
-          path="/supplylist"
+          path="/supplylists"
           element={
             <ProtectedRoute user={user}>
               <SupplyList supplyLists={supplyLists}
