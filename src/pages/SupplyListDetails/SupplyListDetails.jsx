@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import styles from './SupplyListDetails.module.css'
 
 import * as supplyListService from '../../services/supplyListService'
@@ -25,10 +25,16 @@ const SupplyListDetails = (props) => {
     <main className={styles.container}>
       <article>
         <header>
-          <h3>{supplylist.toUpperCase()}</h3>
-          <h1>{supplylist.title}</h1>
+          {/* <h3>{supplylist.toUpperCase()}</h3> */}
+          <h1>{supplylist.title.toUpperCase()}</h1>
           <span>
-            <AuthorInfo content={supplylist} />
+            {/* <AuthorInfo content={supplylist} />
+            {supplylist.owner._id === props.user.profile && */}
+              <>
+                <Link to={`/supplylist/${id}/edit`} state={supplylist}>Edit</Link>
+                <button>Delete</button>
+              </>
+            {/* } */}
           </span>
         </header>
         <p>{supplylist.description}</p>
