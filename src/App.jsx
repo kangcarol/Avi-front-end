@@ -165,9 +165,7 @@ const App = () => {
   }
   
   useEffect(() => {
-    console.log("The useEffect is running");
     const fetchAllSupplyLists = async () => {
-      console.log('The Fetch All function is running')
       const data = await supplyListService.index()
       setSupplyLists(data)
     }
