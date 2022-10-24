@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styles from './QuestionCard.module.css'
 
 // Components
-import AuthorInfo from "../AuthorInfo/AuthorInfo"
+//import AuthorInfo from "../AuthorInfo/AuthorInfo"
 
 const QuestionCard = ({ question }) => {
   return (
@@ -10,9 +10,8 @@ const QuestionCard = ({ question }) => {
       <article className={styles.container}>
         <header>
           <span>
-            <h1>{question.title}</h1>
+            <h1>{question.question}</h1>
           </span>
-          <AuthorInfo content={question} />
         </header>
         <p>{question.text}</p>
       </article>

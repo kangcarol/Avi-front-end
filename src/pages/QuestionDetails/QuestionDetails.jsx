@@ -31,7 +31,7 @@ const QuestionDetails = (props) => {
       <article>
         <header>
           <h1>DETAILS</h1>
-          <h3>{question.category.toUpperCase()}</h3>
+          <h3>{question.category}</h3>
           <h1>{question.title}</h1>
           <span>
             <AuthorInfo content={question} />

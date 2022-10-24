@@ -3,8 +3,7 @@ import styles from './QuestionNew.module.css'
 
 const NewQuestion = (props) => {
   const [form, setForm]  = useState({
-    title: '',
-    text: '',
+    question: '',
   })
 
   const handleChange = ({ target }) => {
@@ -19,24 +18,14 @@ const NewQuestion = (props) => {
   return (
     <main className={styles.container}>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="title-input">Title</label>
-        <input
-          required
-          type="text"
-          name="title"
-          id="title-input"
-          value={form.title}
-          placeholder="Title"
-          onChange={handleChange}
-        />
-        <label htmlFor="text-input">Text</label>
+        <label htmlFor="text-input">Type Here</label>
 				<textarea
           required
           type="text"
-          name="text"
+          name="question"
           id="text-input"
-          value={form.text}
-          placeholder="Text"
+          value={form.question}
+          placeholder="ask a question or share an experience."
           onChange={handleChange}
         />
         
