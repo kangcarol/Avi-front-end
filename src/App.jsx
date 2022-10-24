@@ -57,6 +57,7 @@ const App = () => {
   const [events, setEvents] = useState([])
   const [supplyLists, setSupplyLists] = useState([])
   const [questions, setQuestions] = useState([])
+  const [seen, setSeen] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -225,6 +226,16 @@ const App = () => {
           }
         />
         <Route
+          path="/profiles/:id"
+          element={
+            <ProtectedRoute user={user}>
+              <ProfileDetails
+              seen={seen}
+              />
+            </ProtectedRoute>
+          }
+        />
+        <Route
           path="/change-password"
           element={
             <ProtectedRoute user={user}>
@@ -238,7 +249,6 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <BirdList birds={birds}
-              // addToWishlist={addToWishlist}
               />
             </ProtectedRoute>
           }
@@ -248,7 +258,9 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <BirdDetails user={user} 
-              handleDeleteBird={handleDeleteBird}/>
+              seen = {seen}
+              handleDeleteBird={handleDeleteBird}
+              />
             </ProtectedRoute>
           }
         />
