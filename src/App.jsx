@@ -309,7 +309,7 @@ const App = () => {
         />
         
         <Route
-          path="/supplylist"
+          path="/supplylists"
           element={
             <ProtectedRoute user={user}>
               <SupplyList supplyLists={supplyLists}

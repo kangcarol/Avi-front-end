@@ -8,7 +8,6 @@ import styles from './BirdCard.module.css'
 const BirdCard = ({ bird }) => {
   return (
     <>
-      <h1>Bird List</h1>
       <Link to={`/birds/${bird._id}`}>
         <article className={styles.container}>
           <header>
