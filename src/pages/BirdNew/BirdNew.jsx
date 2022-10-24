@@ -40,7 +40,7 @@ const BirdNew = (props) => {
           placeholder="Description"
           onChange={handleChange}
         />
-        <label htmlFor="category-input">Category</label>
+        <label htmlFor="category-input">Photo</label>
         {/* <textarea
           required
           name="image"
