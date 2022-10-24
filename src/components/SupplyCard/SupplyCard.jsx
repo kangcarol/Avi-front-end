@@ -4,7 +4,7 @@ import styles from './SupplyCard.module.css'
 // Components
 import AuthorInfo from "../AuthorInfo/AuthorInfo"
 
-const BlogCard = ({ supplylist }) => {
+const SupplyListCard = ({ supplylist }) => {
   return (
     <Link to={`/supplylists/${supplylist._id}`}>
       <article className={styles.container}>
@@ -21,4 +21,4 @@ const BlogCard = ({ supplylist }) => {
   )
 }
 
-export default BlogCard
+export default SupplyListCard
