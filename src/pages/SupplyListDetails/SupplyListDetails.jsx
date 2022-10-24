@@ -32,7 +32,7 @@ const SupplyListDetails = (props) => {
             {supplylist.owner._id === props.user.profile && */}
               <>
                 <Link to={`/supplylist/${id}/edit`} state={supplylist}>Edit</Link>
-                <button>Delete</button>
+                <button onClick={() => props.handleDeleteSupplyList(id)}>Delete</button>
               </>
             {/* } */}
           </span>

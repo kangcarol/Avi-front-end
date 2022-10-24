@@ -164,7 +164,6 @@ const App = () => {
   }
   
   useEffect(() => {
-    console.log("SUPPLYLIST USEEFFECT");
     const fetchAllSupplyLists = async () => {
       const data = await supplyListService.index()
       setSupplyLists(data)
