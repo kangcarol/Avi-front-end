@@ -31,7 +31,7 @@ const SupplyListDetails = (props) => {
             {/* <AuthorInfo content={supplylist} />
             {supplylist.owner._id === props.user.profile && */}
               <>
-                <Link to={`/supplylist/${id}/edit`} state={supplylist}>Edit</Link>
+                <Link to={`/supplylists/${id}/edit`} state={supplylist}>Edit</Link>
                 <button onClick={() => props.handleDeleteSupplyList(id)}>Delete</button>
               </>
             {/* } */}
