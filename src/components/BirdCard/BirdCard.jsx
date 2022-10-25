@@ -18,13 +18,13 @@ const BirdCard = (props) => {
             {/* <AuthorInfo content={bird} /> */}
           </header>
           <p>{props.bird.description}</p>
+          {props.bird.author._id === props.user.profile &&
           <button onClick={() => props.handleAddWishlist(props.bird)}>+ wishlist</button>
-
+          }
         </article>
       </Link>
     </>
   )
 }
 
-//! need onclick for wishlist button
 export default BirdCard
