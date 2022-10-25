@@ -13,7 +13,7 @@ const BirdCard = ({ bird }) => {
           <header>
             <span>
               <img src={bird.image} className="birdPhoto" alt="{bird.name}" />
-              <h1>{bird.name}</h1>
+              <h1>{bird.name.toUpperCase()}</h1>
               {/* <Icon category={bird.category} /> */}
             </span>
             {/* <AuthorInfo content={bird} /> */}

@@ -72,7 +72,6 @@ const App = () => {
   // const handleAddToWishlist = async (wishListData??????) => {
   // }
 
-
   const handleAddBird = async (birdData) => {
     // birdData will have a shape of:
     //   {
@@ -221,6 +220,14 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <Profiles />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profiles/:id"
+          element={
+            <ProtectedRoute user={user}>
+              <ProfileDetails />
             </ProtectedRoute>
           }
         />
