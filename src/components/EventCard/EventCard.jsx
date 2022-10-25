@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import styles from './EventCard.module.css'
+import styles from './EventCard.module.css';
+import moment from 'moment/moment'
 
 // Components
 // import Icon from "../Icon/Icon"
@@ -7,6 +8,9 @@ import styles from './EventCard.module.css'
 
 const EventCard = ({ event }) => {
   console.log(event.owner.name)
+  const d = event.date
+  const formattedDate= moment(d).format('L')
+
   return (
     <Link to={`/events/${event._id}`}>
       <article className={styles.container}>
@@ -15,8 +19,7 @@ const EventCard = ({ event }) => {
             <h1>{event.title}</h1>
             <p>{event.location}</p>
             <p>{event.owner.name}</p>
-        
-            <p>{event.date}</p>
+            <p>{formattedDate}</p>
             <p>{event.details}</p>
             {/* <Icon category={event.category} /> */}
           </span>
