@@ -27,5 +27,4 @@ const BirdCard = (props) => {
   )
 }
 
-//! need onclick for wishlist button
 export default BirdCard
