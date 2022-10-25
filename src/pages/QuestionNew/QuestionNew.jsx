@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from './QuestionNew.module.css'
 
+
 const NewQuestion = (props) => {
   const [form, setForm]  = useState({
     question: '',
@@ -17,8 +18,9 @@ const NewQuestion = (props) => {
 
   return (
     <main className={styles.container}>
+      <h1>New Post</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="text-input">Type Here</label>
+        <label htmlFor="text-input"></label>
 				<textarea
           required
           type="text"
