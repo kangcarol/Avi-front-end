@@ -1,18 +1,14 @@
 import { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
+import styles from './QuestionDetails.module.css'
+import * as questionService from '../../services/questionService'
 
-// components
 import Loading from "../Loading/Loading"
 //import AuthorInfo from "../../components/AuthorInfo/AuthorInfo"
 
-import styles from "./QuestionDetails.module.css"
-
-// Services
-import * as questionService from "../../services/questionService"
-
 const QuestionDetails = (props) => {
   const { id } = useParams()
-  const [question, setQuestion] = useState(null)
+  const [question, setQuestion] = useState([])
 
   useEffect(() => {
     const fetchQuestion = async () => {
@@ -22,9 +18,7 @@ const QuestionDetails = (props) => {
     fetchQuestion()
   }, [id])
 
-  console.log("Styles:", styles);
-
-  if (!question) return <Loading />
+// if (!question) return <Loading />
 
   return (
     <main className={styles.container}>
@@ -33,12 +27,11 @@ const QuestionDetails = (props) => {
           <h1>DETAILS</h1>
           <h3>{question.question}</h3>
           <span>
-
-            {question.author._id === props.user.profile &&
+            {question.author._id === props.user.profile? 
               <>
                 <Link to={`/questions/${id}/edit`} state={question}>Edit</Link>
-                <button>Delete</button>
-              </>
+                <button onClick={() => props.handleDeleteQuestion(id)}>Delete</button>
+              </> : null
             }
             {console.log("AUTHOR", question.author)}
           </span>
