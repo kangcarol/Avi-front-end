@@ -1,5 +1,4 @@
 import styles from './AuthorInfo.module.css'
-// import DateCard from "../DateCard/DateCard"
 import ProfileIcon from '../../assets/branding/profile.png'
 
 const AuthorInfo = ({ content }) => {
