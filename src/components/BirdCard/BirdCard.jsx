@@ -18,7 +18,7 @@ const BirdCard = (props) => {
             {/* <AuthorInfo content={bird} /> */}
           </header>
           <p>{props.bird.description}</p>
-          {/* <button onClick={() => props.handleAddWishlist(props.bird)}>+ wishlist</button> */}
+          <button onClick={() => props.handleAddWishlist(props.bird)}>+ wishlist</button>
 
         </article>
       </Link>

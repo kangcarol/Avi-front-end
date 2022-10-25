@@ -1,6 +1,7 @@
 import styles from "./ProfileDetails.module.css"
 import { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
+import BirdCard from "../../components/BirdCard/BirdCard"
 
 // components
 import Loading from "../Loading/Loading"
@@ -40,6 +41,16 @@ const ProfileDetails = (props) => {
             {/* } */}
           </span>
         </header>
+        <div>
+        {/* {props.wishlist.map(bird => (
+              {bird.name}
+            ))} */}
+
+        {props.wishlist.map(bird => (
+          <BirdCard bird={bird} key={bird._id}/>
+        ))}
+        </div>
+
       </article>
     </main>
   )

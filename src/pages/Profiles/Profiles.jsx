@@ -44,14 +44,3 @@ const Profiles = () => {
 }
 
 export default Profiles
-
-
-// {profiles.map((profile, index) =>
-//   <div >
-//     <img src={profile.photo} alt="User's avatar" style={{width: "40px"}}/>
-//     <Link to={`/profiles/${profile._id}`}>
-//       <h3 key={profile._id}>{profile.name.toUpperCase()}</h3>
-//     </Link>
-//   </div>
-//   )}
-// </>
