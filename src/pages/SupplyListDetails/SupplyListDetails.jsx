@@ -25,22 +25,26 @@ const SupplyListDetails = (props) => {
     <main className={styles.container}>
       <article>
         <header>
-          {/* <h3>{supplylist.toUpperCase()}</h3> */}
-          <h1>{supplylist.title.toUpperCase()}</h1>
+          <h2>{supplylist.title.toUpperCase()}</h2>
           <span>
             {/* <AuthorInfo content={supplylist} /> */}
-            {supplylist.owner._id === props.user.profile &&
-              <>
-                <Link to={`/supplylists/${id}/edit`} state={supplylist}>Edit</Link>
-                <button onClick={() => props.handleDeleteSupplyList(id)}>Delete</button>
-              </>
-            }
           </span>
         </header>
-        <p>{supplylist.description}</p>
-        <p>{supplylist.items}</p>
+        <p>Owner: {supplylist.owner.name}</p>
+        <p>Description: {supplylist.description}</p>
+        <p>Items: {supplylist.items}</p>
       </article>
-      <section></section>
+      <section>
+      <span>
+        {/* <AuthorInfo content={supplylist} /> */}
+        {supplylist.owner._id === props.user.profile &&
+          <>
+            <Link to={`/supplylists/${id}/edit`} state={supplylist}>Edit</Link>
+            <button onClick={() => props.handleDeleteSupplyList(id)}>Delete</button>
+          </>
+        }
+          </span>
+      </section>
     </main>
   )
 }
