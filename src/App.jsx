@@ -235,11 +235,14 @@ const App = () => {
             <ProtectedRoute user={user}>
               <ProfileDetails
               seen={seen}
+              wishlist={wishlist}
+              handleAddWishlist={handleAddWishlist}
+              handleSeen={handleSeen}
               />
-
             </ProtectedRoute>
           }
         />
+
         <Route
           path="/change-password"
           element={
@@ -257,6 +260,8 @@ const App = () => {
                 birds={birds}
                 handleAddWishlist={handleAddWishlist}
                 handleSeen={handleSeen}
+                seen={seen}
+                wishlist={wishlist}
               />
             </ProtectedRoute>
           }
@@ -270,6 +275,8 @@ const App = () => {
               handleDeleteBird={handleDeleteBird}
               handleAddWishlist={handleAddWishlist}
               handleSeen={handleSeen}
+              seen={seen}
+              wishlist={wishlist}
             />
 
             </ProtectedRoute>

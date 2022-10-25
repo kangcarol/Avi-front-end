@@ -6,6 +6,7 @@ import styles from './EventCard.module.css'
 // import AuthorInfo from "../AuthorInfo/AuthorInfo"
 
 const EventCard = ({ event }) => {
+  console.log(event.owner.name)
   return (
     <Link to={`/events/${event._id}`}>
       <article className={styles.container}>
@@ -13,7 +14,8 @@ const EventCard = ({ event }) => {
           <span>
             <h1>{event.title}</h1>
             <p>{event.location}</p>
-            <p>{event.owner}</p>
+            <p>{event.owner.name}</p>
+        
             <p>{event.date}</p>
             <p>{event.details}</p>
             {/* <Icon category={event.category} /> */}
@@ -23,6 +25,8 @@ const EventCard = ({ event }) => {
         <p>{event.text}</p>
       </article>
     </Link>
+
+    
   )
 }
 

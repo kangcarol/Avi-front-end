@@ -13,7 +13,7 @@ const EventEdit = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    props.handleUpdateBlog(form)
+    props.handleUpdateEvent(form)
   }
 
   return (
@@ -46,7 +46,7 @@ const EventEdit = (props) => {
           type="text"
           name="owner"
           id="owner-input"
-          value={form.owner}
+          value={form.owner.name}
           placeholder="owner"
           onChange={handleChange}
         />
