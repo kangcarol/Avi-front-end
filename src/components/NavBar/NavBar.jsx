@@ -11,15 +11,15 @@ const NavBar = ({ user, handleLogout, profile }) => {
   )
 
   const protectedLinks = (
+    console.log(user),
     <ul>
-      <li>Welcome, {user.name}</li> 
+      {user? <h2>Welcome, {user.name}</h2> : ''}
       {/* <img src={profile.photo} alt="User's avatar" style={{width: "40px"}}/> */}
       <li><NavLink to="/profiles">Profiles</NavLink></li>
       <li><NavLink to="/birds">Birds</NavLink></li>
       <li><NavLink to="/supplylists">Supply Lists</NavLink></li>
       <li><NavLink to="/events">Events</NavLink></li>
       <li><NavLink to="/questions">Questions</NavLink></li>
-
       <li><NavLink to="" onClick={handleLogout}>LOG OUT</NavLink></li>
       <li><NavLink to="/changePassword">Change Password</NavLink></li>
     </ul>
@@ -28,7 +28,7 @@ const NavBar = ({ user, handleLogout, profile }) => {
   return (
     <nav className={styles.container}>
       {/* <NavNavLink to={'/'}><img src={Logo} alt="Logo" /></NavNavLink> */}
-      {user ? protectedLinks : publicLinks}
+      {user?  protectedLinks : publicLinks}
     </nav>
   )
 }
