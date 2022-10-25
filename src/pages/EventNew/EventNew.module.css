@@ -1,0 +1,11 @@
+.inputForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.detailsInput {
+  border: 1px solid black;
+  
+}
