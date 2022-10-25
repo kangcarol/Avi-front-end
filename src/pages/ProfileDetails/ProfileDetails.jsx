@@ -1,53 +1,59 @@
+import styles from "./ProfileDetails.module.css"
 import { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
+import BirdCard from "../../components/BirdCard/BirdCard"
 
 // components
 import Loading from "../Loading/Loading"
-//import AuthorInfo from "../../components/AuthorInfo/AuthorInfo"
-
-import styles from "./ProfileDetails.module.css"
+import AuthorInfo from "../../components/AuthorInfo/AuthorInfo"
 
 // Services
 import * as profileService from "../../services/profileService"
-import { setToken } from "../../services/tokenService"
 
-const Profile = (props) => {
+const ProfileDetails = (props) => {
   const { id } = useParams()
+  const [profile, setProfile] = useState(null)
 
-  const [profile, setProfile] = useState([])
-
-useEffect(() => {
+  useEffect(() => {
     const fetchProfile = async () => {
       const data = await profileService.show(id)
       setProfile(data)
     }
     fetchProfile()
   }, [id])
-  // if want error message that resource is not available can write code here
 
-
-  if (!Profile) return <Loading />
+  if (!profile) return <Loading />
 
   return (
     <main className={styles.container}>
       <article>
         <header>
-          {/* <h3>{bird.name.toUpperCase()}</h3> */}
-          <h1>hello world</h1>
+          <h3>{profile.name.toUpperCase()}</h3>
           <span>
-            {/* <AuthorInfo content={bird} />
-            {bird.author._id === props.user.profile &&
-              <>
-                <Link to={`/birds/${id}/edit`} state={bird}>edit</Link>
-                <button onClick={() => props.handleDeleteBird(id)}>delete</button>
-              </>
-            } */}
+            <p>about:</p>
+            <p>{profile.about}</p>
+          </span>
+          <img src={profile.photo} alt="User's avatar" style={{width: "40px"}}/>
+          <span>
+            <>
+              {/* <Link to={`/profiles/${id}/edit`} state={profile}>edit</Link> */}
+            </>
+            {/* } */}
           </span>
         </header>
-        <p>{Profile.about}</p>
+        <div>
+        {/* {props.wishlist.map(bird => (
+              {bird.name}
+            ))} */}
+
+        {props.wishlist.map(bird => (
+          <BirdCard bird={bird} key={bird._id}/>
+        ))}
+        </div>
+
       </article>
-  </main>
+    </main>
   )
 }
 
-export default Profile
+export default ProfileDetails

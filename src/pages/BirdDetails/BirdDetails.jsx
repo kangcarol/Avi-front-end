@@ -30,23 +30,19 @@ const BirdDetails = (props) => {
     <main className={styles.container}>
       <article>
         <header>
-          {/* <h3>{bird.name.toUpperCase()}</h3> */}
-          <h1>{bird.nametoUpperCase()}</h1>
+          <h3>{bird.name.toUpperCase()}</h3>
+          <p>{bird.description}</p>
           <span>
-            <AuthorInfo content={bird} />
-            {bird.author._id === props.user.profile &&
+            {/* <AuthorInfo content={bird} /> */}
+            {/* {bird.author._id === props.user.profile && */}
               <>
                 <Link to={`/birds/${id}/edit`} state={bird}>edit</Link>
                 <button onClick={() => props.handleDeleteBird(id)}>delete</button>
               </>
-            }
+            {/* } */}
           </span>
         </header>
-        <p>{bird.description}</p>
       </article>
-      <section>
-        <h1>Comments</h1>
-      </section>
     </main>
   )
 }

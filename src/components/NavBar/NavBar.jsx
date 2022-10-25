@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import styles from './NavBar.module.css'
 
-const NavBar = ({ user, handleLogout }) => {
+const NavBar = ({ user, handleLogout, profile }) => {
 
   const publicLinks = (
     <ul>
@@ -12,13 +12,14 @@ const NavBar = ({ user, handleLogout }) => {
 
   const protectedLinks = (
     <ul>
-      {/* <li>Welcome, {user.name}</li> */} 
+      <li>Welcome, {user.name}</li> 
+      {/* <img src={profile.photo} alt="User's avatar" style={{width: "40px"}}/> */}
       <li><NavLink to="/profiles">Profiles</NavLink></li>
       <li><NavLink to="/birds">Birds</NavLink></li>
       <li><NavLink to="/supplylists">Supply Lists</NavLink></li>
       <li><NavLink to="/events">Events</NavLink></li>
       <li><NavLink to="/questions">Questions</NavLink></li>
- 
+
       <li><NavLink to="" onClick={handleLogout}>LOG OUT</NavLink></li>
       <li><NavLink to="/changePassword">Change Password</NavLink></li>
     </ul>

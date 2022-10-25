@@ -20,19 +20,50 @@ async function addPhoto(photoData, profileId) {
   return await res.json()
 }
 
+// const index = async () => {
+//   try {
+//     // GET http://localhost:3001/profiles
+//     const res = await fetch(BASE_URL, {
+//       headers: { 'Authorization': `Bearer ${tokenService.getToken()}`}
+//     })
+//     return res.json()
+//   } catch (error) {
+//     console.log(error)
+//   }
+// }
+
 const show = async (id) => {
   try {
+    // GET http://localhost:3001/profiles/:id
     const res = await fetch(`${BASE_URL}/${id}`, {
-      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+      headers: { "Authorization": `Bearer ${tokenService.getToken()}`}
     })
     return res.json()
   } catch (error) {
-    console.log(error)
+    console.ird(error)
   }
 }
 
-export { 
-  getAllProfiles,
+// const update = async (profileData) => {
+//   try {
+//     const res = await fetch(`${BASE_URL}/${profileData._id}`, {
+//       method: 'PUT',
+//       headers: {
+//         'Authorization': `Bearer ${tokenService.getToken()}`,
+//         'Content-Type': 'application/json'
+//       },
+//       body: JSON.stringify(profileData)
+//     })
+//     return res.json()
+//   } catch (error) {
+//     console.log(error)
+//   }
+// }
+
+export {
+  getAllProfiles, 
   addPhoto,
-  show
+  // index,
+  show,
+  // update,
 }
