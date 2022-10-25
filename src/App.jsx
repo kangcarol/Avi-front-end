@@ -57,6 +57,8 @@ const App = () => {
   const [events, setEvents] = useState([])
   const [supplyLists, setSupplyLists] = useState([])
   const [questions, setQuestions] = useState([])
+  const [seen,setSeen] = useState([])
+  const [wishlist,setWishlist] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -68,9 +70,14 @@ const App = () => {
     setUser(authService.getUser())
   }
 
+  const handleAddWishlist = (addedBird) => {
+    setWishlist([addedBird, ...wishlist])
+    console.log(wishlist, "WISHLIST")
+  }
 
-  // const handleAddToWishlist = async (wishListData??????) => {
-  // }
+  const handleSeen = (addSeen) => {
+    setSeen([addSeen, ...seen])
+  }
 
   const handleAddBird = async (birdData) => {
     // birdData will have a shape of:
@@ -227,7 +234,8 @@ const App = () => {
           path="/profiles/:id"
           element={
             <ProtectedRoute user={user}>
-              <ProfileDetails />
+              <ProfileDetails 
+              seen={seen} wishlist={wishlist}/>
             </ProtectedRoute>
           }
         />
@@ -244,8 +252,10 @@ const App = () => {
           path="/birds"
           element={
             <ProtectedRoute user={user}>
-              <BirdList birds={birds}
-              // addToWishlist={addToWishlist}
+              <BirdList 
+                birds={birds}
+                handleAddWishlist={handleAddWishlist}
+                handleSeen={handleSeen}
               />
             </ProtectedRoute>
           }
@@ -255,7 +265,10 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <BirdDetails user={user} 
-              handleDeleteBird={handleDeleteBird}/>
+              handleDeleteBird={handleDeleteBird}
+              handleAddWishlist={handleAddWishlist}
+              handleSeen={handleSeen}
+            />
             </ProtectedRoute>
           }
         />

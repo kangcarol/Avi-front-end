@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import ProfileCard from '../../components/ProfileCard/ProfileCard'
 import styles from "./Profiles.module.css"
 
-const Profiles = (props) => {
+const Profiles = () => {
   const [profiles, setProfiles] = useState([])
 
 
@@ -31,7 +31,7 @@ const Profiles = (props) => {
       {profiles.length ? 
         <>
           <main className={styles.container}>
-            {props.profiles.map(profile => (
+            {profiles.map(profile => (
               <ProfileCard profile={profile} key={profile._id}/>
             ))}
           </main>
