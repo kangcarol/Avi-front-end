@@ -28,13 +28,13 @@ const SupplyListDetails = (props) => {
           {/* <h3>{supplylist.toUpperCase()}</h3> */}
           <h1>{supplylist.title.toUpperCase()}</h1>
           <span>
-            {/* <AuthorInfo content={supplylist} />
-            {supplylist.owner._id === props.user.profile && */}
+            {/* <AuthorInfo content={supplylist} /> */}
+            {supplylist.owner._id === props.user.profile &&
               <>
                 <Link to={`/supplylists/${id}/edit`} state={supplylist}>Edit</Link>
                 <button onClick={() => props.handleDeleteSupplyList(id)}>Delete</button>
               </>
-            {/* } */}
+            }
           </span>
         </header>
         <p>{supplylist.description}</p>
