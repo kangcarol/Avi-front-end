@@ -20,17 +20,17 @@ async function addPhoto(photoData, profileId) {
   return await res.json()
 }
 
-const index = async () => {
-  try {
-    // GET http://localhost:3001/profiles
-    const res = await fetch(BASE_URL, {
-      headers: { 'Authorization': `Bearer ${tokenService.getToken()}`}
-    })
-    return res.json()
-  } catch (error) {
-    console.log(error)
-  }
-}
+// const index = async () => {
+//   try {
+//     // GET http://localhost:3001/profiles
+//     const res = await fetch(BASE_URL, {
+//       headers: { 'Authorization': `Bearer ${tokenService.getToken()}`}
+//     })
+//     return res.json()
+//   } catch (error) {
+//     console.log(error)
+//   }
+// }
 
 const show = async (id) => {
   try {
@@ -44,26 +44,26 @@ const show = async (id) => {
   }
 }
 
-const update = async (profileData) => {
-  try {
-    const res = await fetch(`${BASE_URL}/${profileData._id}`, {
-      method: 'PUT',
-      headers: {
-        'Authorization': `Bearer ${tokenService.getToken()}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(profileData)
-    })
-    return res.json()
-  } catch (error) {
-    console.log(error)
-  }
-}
+// const update = async (profileData) => {
+//   try {
+//     const res = await fetch(`${BASE_URL}/${profileData._id}`, {
+//       method: 'PUT',
+//       headers: {
+//         'Authorization': `Bearer ${tokenService.getToken()}`,
+//         'Content-Type': 'application/json'
+//       },
+//       body: JSON.stringify(profileData)
+//     })
+//     return res.json()
+//   } catch (error) {
+//     console.log(error)
+//   }
+// }
 
 export {
   getAllProfiles, 
   addPhoto,
-  index,
+  // index,
   show,
-  update,
+  // update,
 }

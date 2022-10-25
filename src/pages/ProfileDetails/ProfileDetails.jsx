@@ -35,7 +35,7 @@ const ProfileDetails = (props) => {
           <img src={profile.photo} alt="User's avatar" style={{width: "40px"}}/>
           <span>
             <>
-              <Link to={`/profiles/${id}/edit`} state={profile}>edit</Link>
+              {/* <Link to={`/profiles/${id}/edit`} state={profile}>edit</Link> */}
             </>
             {/* } */}
           </span>
