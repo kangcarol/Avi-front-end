@@ -1,6 +1,6 @@
 import * as tokenService from '../services/tokenService'
 
-const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/supplylist`
+const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/supplylists`
 
 const index = async () => {
   try {

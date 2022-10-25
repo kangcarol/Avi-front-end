@@ -60,6 +60,7 @@ const App = () => {
   const [seen,setSeen] = useState([])
   const [wishlist,setWishlist] = useState([])
 
+
   const handleLogout = () => {
     authService.logout()
     setUser(null)
@@ -170,9 +171,7 @@ const App = () => {
   }
   
   useEffect(() => {
-    console.log("The useEffect is running");
     const fetchAllSupplyLists = async () => {
-      console.log('The Fetch All function is running')
       const data = await supplyListService.index()
       setSupplyLists(data)
     }
@@ -234,8 +233,10 @@ const App = () => {
           path="/profiles/:id"
           element={
             <ProtectedRoute user={user}>
-              <ProfileDetails 
-              seen={seen} wishlist={wishlist}/>
+              <ProfileDetails
+              seen={seen}
+              />
+
             </ProtectedRoute>
           }
         />
@@ -260,6 +261,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+
         <Route
           path="/birds/:id"
           element={
@@ -269,6 +271,7 @@ const App = () => {
               handleAddWishlist={handleAddWishlist}
               handleSeen={handleSeen}
             />
+
             </ProtectedRoute>
           }
         />

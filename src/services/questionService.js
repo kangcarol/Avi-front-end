@@ -23,6 +23,7 @@ const show = async (id) => {
     console.log(error)
   }
 }
+
 const create = async (questionData) => {
   try {
     const res = await fetch(BASE_URL, {

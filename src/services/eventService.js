@@ -1,6 +1,7 @@
 import * as tokenService from "./tokenService"
 
-const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/event`
+
+const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/events`
 
 const index = async () => {
   try {
@@ -13,6 +14,20 @@ const index = async () => {
     console.log(error)
   }
 }
+
+const show = async (id) => {
+  try {
+    // GET http://localhost:3001/events/:id
+    const res = await fetch(`${BASE_URL}/${id}`, {
+      headers: { "Authorization": `Bearer ${tokenService.getToken()}`}
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
 
 const create = async (eventData) => {
   // blogData will have a shape of:
@@ -68,7 +83,7 @@ const deleteEvent = async (id) => {
 
 export {
   index,
-  // show,
+  show,
   create,
   update,
   deleteEvent
