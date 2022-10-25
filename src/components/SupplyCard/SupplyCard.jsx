@@ -14,8 +14,6 @@ const SupplyListCard = ({ supplylist }) => {
           </span>
           {/* <AuthorInfo content={supplylist} /> */}
         </header>
-        {/* <p>{supplylist.description}</p>
-        <p>{supplylist.items}</p> */}
       </article>
     </Link>
   )
