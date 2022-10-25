@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
 import styles from './BirdCard.module.css'
+import { useLocation } from "react-router-dom";
 
 // Components
 // import Icon from "../Icon/Icon"
 // import AuthorInfo from "../AuthorInfo/AuthorInfo"
 
 const BirdCard = (props) => {
+  const location = useLocation();
+  console.log(props, "wishlist")
+
+
   return (
     <>
       <Link to={`/birds/${props.bird._id}`}>
@@ -18,14 +23,24 @@ const BirdCard = (props) => {
             {/* <AuthorInfo content={bird} /> */}
           </header>
           <p>{props.bird.description}</p> 
-          {/* {props.bird.author._id === props.user.profile && */}
-          <button onClick={() => props.handleSeen(props.bird)}>seen</button>
-          <button onClick={() => props.handleAddWishlist(props.bird)}>+ wishlist</button>
-          {/* }  */}
+
+        {(location.pathname ==='/birds') || (location.pathname !=='/birds' && props.wishlist ) ?
+
+          <button id="seen-btn" onClick={() => props.handleSeen(props.bird)}>seen</button>
+          :
+          ''
+        }
+        {(location.pathname ==='/birds') || (location.pathname !=='/birds' && props.wishlist===false) ?
+
+        <button id="wishlist-btn" onClick={() => props.handleAddWishlist(props.bird)}>+ wishlist</button>
+          :
+          ''
+        }
         </article>
       </Link>
     </>
   )
+
 }
 
 export default BirdCard
