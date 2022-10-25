@@ -13,7 +13,7 @@ const NavBar = ({ user, handleLogout}) => {
   const protectedLinks = (
     console.log(user),
     <ul>
-      {user? <h2>Welcome, {user.name}</h2> : ''}
+      <h2>Welcome, {user ? user.name : 'Birder'}</h2>
       {/* <img src={profile.photo} alt="User's avatar" style={{width: "40px"}}/> */}
       <li><NavLink to="/profiles">Profiles</NavLink></li>
       <li><NavLink to="/birds">Birds</NavLink></li>

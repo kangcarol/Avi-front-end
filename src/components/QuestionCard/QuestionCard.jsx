@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import styles from './QuestionCard.module.css'
-import AuthorInfo from "../AuthorInfo/AuthorInfo"
+//import AuthorInfo from "../AuthorInfo/AuthorInfo"
 
 // Components
 //import AuthorInfo from "../AuthorInfo/AuthorInfo"
 
 const QuestionCard = ({ question }) => {
+  console.log(question.author.name)
   return (
     <Link to={`/questions/${question._id}`}>
       <article className={styles.container}>
