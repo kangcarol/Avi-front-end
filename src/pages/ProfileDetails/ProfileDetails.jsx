@@ -1,11 +1,10 @@
+import styles from "./ProfileDetails.module.css"
 import { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
 
 // components
 import Loading from "../Loading/Loading"
 import AuthorInfo from "../../components/AuthorInfo/AuthorInfo"
-
-import styles from "./ProfileDetails.module.css"
 
 // Services
 import * as profileService from "../../services/profileService"
@@ -29,7 +28,10 @@ const ProfileDetails = (props) => {
       <article>
         <header>
           <h3>{profile.name.toUpperCase()}</h3>
-          <p>{profile.about}</p>
+          <span>
+            <p>about:</p>
+            <p>{profile.about}</p>
+          </span>
           <img src={profile.photo} alt="User's avatar" style={{width: "40px"}}/>
           <span>
             <>
