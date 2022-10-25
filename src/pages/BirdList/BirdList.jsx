@@ -12,7 +12,7 @@ const BirdList = (props) => {
       <h1>Bird List</h1>
       <button onClick={() => {navigate("/birds/new")}}>add a bird</button>
         {props.birds.map(bird => (
-          <BirdCard handleAddWishlist={props.handleAddWishlist} bird={bird} key={bird._id}/>
+          <BirdCard handleSeen={props.handleSeen} handleAddWishlist={props.handleAddWishlist} bird={bird} key={bird._id}/>
         ))}
       </main>
     </>

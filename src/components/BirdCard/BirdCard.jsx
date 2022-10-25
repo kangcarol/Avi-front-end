@@ -17,10 +17,11 @@ const BirdCard = (props) => {
             </span>
             {/* <AuthorInfo content={bird} /> */}
           </header>
-          <p>{props.bird.description}</p>
-          {props.bird.author._id === props.user.profile &&
+          <p>{props.bird.description}</p> 
+          {/* {props.bird.author._id === props.user.profile && */}
+          <button onClick={() => props.handleSeen(props.bird)}>seen</button>
           <button onClick={() => props.handleAddWishlist(props.bird)}>+ wishlist</button>
-          }
+          {/* }  */}
         </article>
       </Link>
     </>
