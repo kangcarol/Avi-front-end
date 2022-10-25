@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
 import styles from './SupplyListDetails.module.css'
-
 import * as supplyListService from '../../services/supplyListService'
 
 import Loading from "../Loading/Loading"
-import AuthorInfo from "../../components/AuthorInfo/AuthorInfo"
+//import AuthorInfo from "../../components/AuthorInfo/AuthorInfo"
 
 const SupplyListDetails = (props) => {
   const { id } = useParams()

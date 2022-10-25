@@ -193,8 +193,10 @@ const App = () => {
   }
 
   const handleDeleteQuestion = async (id) => {
+    console.log('click works')
     const deletedQuestion = await questionService.deleteQuestion(id)
     setQuestions(questions.filter(b => b._id !== deletedQuestion._id))
+
     navigate('/questions')
   }
 
