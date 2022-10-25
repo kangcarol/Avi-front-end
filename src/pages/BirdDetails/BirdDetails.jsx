@@ -31,6 +31,7 @@ const BirdDetails = (props) => {
       <article>
         <header>
           <h3>{bird.name.toUpperCase()}</h3>
+          <p>{bird.description}</p>
           <span>
             {/* <AuthorInfo content={bird} /> */}
             {/* {bird.author._id === props.user.profile && */}
@@ -41,7 +42,6 @@ const BirdDetails = (props) => {
             {/* } */}
           </span>
         </header>
-        <p>{bird.description}</p>
       </article>
     </main>
   )

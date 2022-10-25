@@ -15,7 +15,7 @@ const BirdList = (props) => {
           <BirdCard bird={bird} key={bird._id}/>
         ))}
       </main>
-  </>
+    </>
   )
 }
 

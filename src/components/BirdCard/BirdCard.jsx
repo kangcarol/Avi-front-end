@@ -5,20 +5,20 @@ import styles from './BirdCard.module.css'
 // import Icon from "../Icon/Icon"
 // import AuthorInfo from "../AuthorInfo/AuthorInfo"
 
-const BirdCard = ({ bird }) => {
+const BirdCard = (props) => {
   return (
     <>
-      <Link to={`/birds/${bird._id}`}>
+      <Link to={`/birds/${props.bird._id}`}>
         <article className={styles.container}>
           <header>
             <span>
-              <img src={bird.image} className="birdPhoto" alt="{bird.name}" />
-              <h1>{bird.name}</h1>
-              {/* <Icon category={bird.category} /> */}
+              <img src={props.bird.image} className="birdPhoto" alt="{bird.name}" />
+              <h1>{props.bird.name.toUpperCase()}</h1>
             </span>
             {/* <AuthorInfo content={bird} /> */}
           </header>
-          <p>{bird.description}</p>
+          <p>{props.bird.description}</p>
+          <button onClick={() => props.handleAddWishlist(props.bird)}>+ wishlist</button>
 
         </article>
       </Link>

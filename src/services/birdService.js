@@ -10,7 +10,7 @@ const index = async () => {
     })
     return res.json()
   } catch (error) {
-    console.ird(error)
+    console.log(error)
   }
 }
 
@@ -22,7 +22,7 @@ const show = async (id) => {
     })
     return res.json()
   } catch (error) {
-    console.ird(error)
+    console.log(error)
   }
 }
 
