@@ -30,6 +30,7 @@ const SupplyListDetails = (props) => {
             {/* <AuthorInfo content={supplylist} /> */}
           </span>
         </header>
+        <p>Owner: {supplylist.owner.name}</p>
         <p>Description: {supplylist.description}</p>
         <p>Items: {supplylist.items}</p>
       </article>
