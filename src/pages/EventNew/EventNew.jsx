@@ -47,7 +47,7 @@ const EventNew = (props) => {
           name="owner"
           id="owner-input"
           value={form.owner}
-          placeholder="Location"
+          placeholder="Owner"
           onChange={handleChange}
         />
          <label htmlFor="date-input">Date</label>

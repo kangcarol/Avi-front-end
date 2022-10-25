@@ -8,11 +8,13 @@ const EventList = (props) => {
   return (
     <>
       <main className={styles.container}>
-        <h1>Event List</h1>
-        <button onClick={() => {navigate("/events/new")}}>add an event</button>
+        <h1>EVENT LIST</h1>
+        <button onClick={() => {navigate("/events/new")}}>ADD AN EVENT</button>
         {props.events.map(event => (
           <EventCard event={event} key={event._id}/>
+          // (props.event.date.getMonth() +1 )
         ))}
+
       </main>
       </>
   )

@@ -30,7 +30,7 @@ const EventDetails = (props) => {
     <main className={styles.container}>
       <article>
         <header>
-          <h3>{event.category.toUpperCase()}</h3>
+          {/* <h3>{event.category.toUpperCase()}</h3> */}
           <h1>{event.title}</h1>
           <span>
             {/* <AuthorInfo content={event} />
@@ -47,11 +47,12 @@ const EventDetails = (props) => {
             {/* } */}
           </span>
         </header>
-        <p>{event.text}</p>
+        <p>{event.title}</p>
+        <p>{event.location}</p>
+        <p>{event.owner.name}</p>
+        <p>{event.details}</p>
+        <p>{event.date}</p>
       </article>
-      <section>
-        <h1>Comments</h1>
-      </section>
     </main>
   )
 }
