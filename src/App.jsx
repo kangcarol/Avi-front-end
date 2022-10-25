@@ -407,7 +407,7 @@ const App = () => {
           path="/questions/:id/edit" 
           element={
           <ProtectedRoute user={user}>
-            <QuestionEdit handleUpdateBird={handleUpdateQuestion} />
+            <QuestionEdit handleUpdateQuestion={handleUpdateQuestion} />
           </ProtectedRoute>
         }
         />

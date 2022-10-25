@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom"
 
 // components
 import Loading from "../Loading/Loading"
-import AuthorInfo from "../../components/AuthorInfo/AuthorInfo"
+//import AuthorInfo from "../../components/AuthorInfo/AuthorInfo"
 
 import styles from "./QuestionDetails.module.css"
 
@@ -31,10 +31,8 @@ const QuestionDetails = (props) => {
       <article>
         <header>
           <h1>DETAILS</h1>
-          <h3>{question.category.toUpperCase()}</h3>
-          <h1>{question.title}</h1>
+          <h3>{question.question}</h3>
           <span>
-            <AuthorInfo content={question} />
 
             {question.author._id === props.user.profile &&
               <>
@@ -42,6 +40,7 @@ const QuestionDetails = (props) => {
                 <button>Delete</button>
               </>
             }
+            {console.log("AUTHOR", question.author)}
           </span>
         </header>
         <p>{question.text}</p>

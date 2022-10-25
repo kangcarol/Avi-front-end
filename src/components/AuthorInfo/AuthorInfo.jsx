@@ -3,10 +3,11 @@ import styles from './AuthorInfo.module.css'
 import ProfileIcon from '../../assets/branding/profile.png'
 
 const AuthorInfo = ({ content }) => {
+  //const photo = content.author.photo ? content.author.photo : ProfileIcon
   const photo =  ProfileIcon
   return (
     <div className={styles.container}>
-      <img src={photo} alt="User's avatar" />
+
       <section>
         <h4>{content.author.name}</h4>
       </section>
