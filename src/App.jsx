@@ -59,7 +59,7 @@ const App = () => {
   const [questions, setQuestions] = useState([])
   const [seen,setSeen] = useState([])
   const [wishlist,setWishlist] = useState([])
-  const [about,setAbout] = useState([])
+  // const [about,setAbout] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -74,11 +74,13 @@ const App = () => {
   const handleAddWishlist = (addedBird) => {
     setWishlist([addedBird, ...wishlist])
     console.log(wishlist, "WISHLIST")
+    navigate('/profiles/:id')
   }
 
   const handleSeen = (addSeen) => {
     setSeen([addSeen, ...seen])
     setWishlist(wishlist.filter((bird, i) => bird._id !== addSeen._id))
+    navigate('/profiles/:id')
   }
 
   const birdPhotoHelper = async (photo, id) => {
