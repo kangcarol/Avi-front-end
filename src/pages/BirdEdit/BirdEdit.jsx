@@ -7,6 +7,12 @@ const BirdEdit = (props) => {
   const [form, setForm] = useState(state)
 
   console.log(state)
+
+  const [photoData, setPhotoData] = useState({})
+
+  const handleChangePhoto = (evt) => {
+		setPhotoData({ photo: evt.target.files[0] })
+	}
   
   const handleChange = ({ target }) => {
     setForm({ ...form, [target.name]: target.value })
@@ -14,7 +20,7 @@ const BirdEdit = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    props.handleUpdateBird(form)
+    props.handleUpdateBird(form, photoData.photo)
   }
 
   return (
@@ -41,15 +47,16 @@ const BirdEdit = (props) => {
           placeholder="Description"
           onChange={handleChange}
         />
-        <label htmlFor="category-input">Category</label>
-        {/* <textarea
-          required
-          name="image"
-          id="image-bird"
-          value={form.image}
-          onChange={handleChange}
-        />    
-        <button type="submit">save photo</button> */}
+        <label htmlFor="photo-upload" className="form-label">
+						{photoData.photo ? "Replace existing photo" : "Add Photo"}
+					</label>
+					<input
+						type="file"
+						className="form-control"
+						id="photo-upload"
+						name="photo"
+						onChange={handleChangePhoto}
+					/>
         <button type="submit">save</button>
       </form>
     </main>
