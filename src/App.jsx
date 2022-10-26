@@ -102,9 +102,12 @@ const App = () => {
     navigate('/birds')
   }
 
-  const handleUpdateBird = async (birdData) => {
+  const handleUpdateBird = async (birdData, photo) => {
     // birdData._id will be 634daa34dc0dfecfbb5767de, as example
     const updatedBird = await birdService.update(birdData)
+    if(photo) {
+      updatedBird.photo = await birdPhotoHelper(photo, updatedBird._id)
+    }
     const updatedBirdsData = birds.map(bird => {
       return birdData._id === bird._id ? updatedBird : bird
     })

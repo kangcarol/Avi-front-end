@@ -17,7 +17,7 @@ const BirdCard = (props) => {
         <article className={styles.container}>
           <header>
             <span>
-              <img src={props.bird.image} className="birdPhoto" alt="{bird.name}" />
+              <img src={props.bird.photo} className="birdPhoto" alt="{bird.name}" style={{width: '340px'}} />
               <h1>{props.bird.name.toUpperCase()}</h1>
             </span>
             {/* <AuthorInfo content={bird} /> */}

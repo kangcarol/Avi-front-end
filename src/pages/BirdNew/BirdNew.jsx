@@ -54,7 +54,7 @@ const BirdNew = (props) => {
 						type="file"
 						className="form-control"
 						id="photo-upload"
-						name="image"
+						name="photo"
 						onChange={handleChangePhoto}
 					/>
 
