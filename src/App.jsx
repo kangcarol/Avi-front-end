@@ -78,6 +78,7 @@ const App = () => {
 
   const handleSeen = (addSeen) => {
     setSeen([addSeen, ...seen])
+    setWishlist(wishlist.filter((bird, i) => bird._id !== addSeen._id))
   }
 
   const handleAddBird = async (birdData) => {
