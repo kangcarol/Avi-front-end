@@ -153,9 +153,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    console.log("The useEffect is running");
     const fetchAllEvents = async () => {
-      console.log('The Fetch All function is running')
       const data = await eventService.index()
       setEvents(data)
     }
@@ -320,7 +318,7 @@ const App = () => {
           path="/events"
           element={
             <ProtectedRoute user={user}>
-              <EventList events={events}
+              <EventList events={events} 
               />
             </ProtectedRoute>
           }
