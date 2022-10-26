@@ -1,9 +1,9 @@
 const AnswerCard = ({ answer }) => {
   return (
     <article>
-      <header>
-        <AuthorInfo content={answer} />
+      <header key ={answer.id}>
       </header>
+      {console.log(answer.author.name)}
       <p>{answer.text}</p>
     </article>
   )

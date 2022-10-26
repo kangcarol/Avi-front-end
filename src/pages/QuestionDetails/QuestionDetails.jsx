@@ -3,16 +3,18 @@ import { useParams, Link } from "react-router-dom"
 import styles from './QuestionDetails.module.css'
 import * as questionService from '../../services/questionService'
 import NewAnswer from "../../components/AnswerNew/AnswerNew"
+import Answers from "../../components/Answers/Answers"
 import Loading from "../Loading/Loading"
 
 const QuestionDetails = (props) => {
   const { id } = useParams()
   const [question, setQuestion] = useState(null)
-  const [answer, setAnswer] =useState(null)
+
 
 const handleAddAnswer = async (answerData) => {
   const newAnswer = await questionService.createAnswer(id, answerData)
-  setAnswer({ ...answer, comments: [...answer.comments, newAnswer] })
+  console.log('handleAddanswer', answerData)
+  setQuestion({ ...question, answers: [...question.answers, newAnswer] })
   }
 
   useEffect(() => {
@@ -28,12 +30,11 @@ if (!question) return <Loading />
   return (
     <main className={styles.container}>
       <article>
-          {console.log('author here', question.author._id)}
+          {console.log('author here', question.author)}
         <header>
           <h1>DETAILS</h1>
           <h3>{question.question}</h3>
           <span>
-          {/* <AuthorInfo content={question} /> */}
             {question.author._id === props.user.profile && 
           <>
                 <Link to={`/questions/${id}/edit`} state={question}>Edit</Link>
@@ -47,7 +48,8 @@ if (!question) return <Loading />
       </article>
       <section>
   <h1>Comments</h1>
-  <NewAnswer handleAddAnswer={handleAddAnswer} />
+  <NewAnswer handleAddAnswer={handleAddAnswer}/>
+  <Answers answers ={question.answers} user={props.user} />
 </section>
     </main>
   )

@@ -81,12 +81,6 @@ const App = () => {
   }
 
   const handleAddBird = async (birdData) => {
-    // birdData will have a shape of:
-    //   {
-    //     "name": "string",
-    //     "descripton": "string",
-    //     etc etc...
-    //   }
     const newBird = await birdService.create(birdData)
     setBirds([newBird, ...birds])
     navigate('/birds')
