@@ -16,7 +16,7 @@ const ProfileCard = ({ profile }) => {
             </span>
           </header>
           <h3>{profile.name.toUpperCase()}</h3>
-          <p>{profile.about}</p>
+          {/* <p>{profile.about}</p> */}
         </article>
       </Link>
     </>

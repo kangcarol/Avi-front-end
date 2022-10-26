@@ -13,12 +13,13 @@ const BirdCard = (props) => {
 
   return (
     <>
-      <Link to={`/birds/${props.bird._id}`}>
         <article className={styles.container}>
           <header>
             <span>
               <img src={props.bird.photo} className="birdPhoto" alt="{bird.name}" style={{width: '340px'}} />
-              <h1>{props.bird.name.toUpperCase()}</h1>
+              <Link to={`/birds/${props.bird._id}`}>
+                <h1>{props.bird.name.toUpperCase()}</h1>
+              </Link>
             </span>
             {/* <AuthorInfo content={bird} /> */}
           </header>
@@ -26,7 +27,7 @@ const BirdCard = (props) => {
 
         {(location.pathname ==='/birds') || (location.pathname !=='/birds' && props.wishlist ) ?
 
-          <button id="seen-btn" onClick={() => props.handleSeen(props.bird)}>seen</button>
+          <button id="seen-btn" onClick={() => props.handleSeen(props.bird) }>seen</button>
           :
           ''
         }
@@ -37,7 +38,6 @@ const BirdCard = (props) => {
           ''
         }
         </article>
-      </Link>
     </>
   )
 

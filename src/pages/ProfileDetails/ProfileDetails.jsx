@@ -30,8 +30,8 @@ const ProfileDetails = (props) => {
         <header>
           <h3>{profile.name.toUpperCase()}</h3>
           <span>
-            <p>about:</p>
-            <p>{profile.about}</p>
+            {/* <p>about:</p>
+            <p>{profile.about}</p> */}
           </span>
           <img src={profile.photo} alt="User's avatar" style={{width: "40px"}}/>
           <span>
