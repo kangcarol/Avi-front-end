@@ -2,12 +2,18 @@ import { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
 import styles from './QuestionDetails.module.css'
 import * as questionService from '../../services/questionService'
+import NewAnswer from "../../components/AnswerNew/AnswerNew"
 import Loading from "../Loading/Loading"
-
 
 const QuestionDetails = (props) => {
   const { id } = useParams()
   const [question, setQuestion] = useState(null)
+  const [answer, setAnswer] =useState(null)
+
+const handleAddAnswer = async (answerData) => {
+  const newAnswer = await questionService.createAnswer(id, answerData)
+  setAnswer({ ...answer, comments: [...answer.comments, newAnswer] })
+  }
 
   useEffect(() => {
     const fetchQuestion = async () => {
@@ -33,18 +39,16 @@ if (!question) return <Loading />
                 <Link to={`/questions/${id}/edit`} state={question}>Edit</Link>
 
                 <button onClick={() => props.handleDeleteQuestion(id)}>Delete</button>
-
               </> 
-
-  
             }
           </span>
         </header>
         <p>{question.text}</p>
       </article>
       <section>
-        <h1>Comments</h1>
-      </section>
+  <h1>Comments</h1>
+  <NewAnswer handleAddAnswer={handleAddAnswer} />
+</section>
     </main>
   )
 }
