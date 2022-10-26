@@ -74,13 +74,15 @@ const App = () => {
   const handleAddWishlist = (addedBird) => {
     setWishlist([addedBird, ...wishlist])
     console.log(wishlist, "WISHLIST")
-    navigate('/profiles')
+    navigate(`/profiles/${user.profile}`)
   }
+
+  console.log("USER", user)
 
   const handleSeen = (addSeen) => {
     setSeen([addSeen, ...seen])
     setWishlist(wishlist.filter((bird, i) => bird._id !== addSeen._id))
-    navigate('/profiles')
+    navigate(`/profiles/${user.profile}`)
   }
 
   const birdPhotoHelper = async (photo, id) => {

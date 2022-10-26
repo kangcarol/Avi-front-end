@@ -2,6 +2,7 @@ import styles from "./ProfileDetails.module.css"
 import { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
 import BirdCard from "../../components/BirdCard/BirdCard"
+import ProfileIcon from '../../assets/branding/profile.png'
 
 // components
 import Loading from "../Loading/Loading"
@@ -34,13 +35,6 @@ const ProfileDetails = (props) => {
             <p>{profile.about}</p> */}
           </span>
           <img src={profile.photo} alt="User's avatar" style={{width: "40px"}}/>
-          <span>
-            {profile._id === props.user.profile &&
-            <>
-              <Link to={`/profiles/${id}/edit`} state={props.profile}>edit</Link>
-            </>
-            }
-          </span>
         </header>
 
         <div>
