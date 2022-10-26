@@ -34,12 +34,12 @@ const BirdDetails = (props) => {
           <p>{bird.description}</p>
           <span>
             {/* <AuthorInfo content={bird} /> */}
-            {/* {bird.author._id === props.user.profile && */}
+            {bird.author._id === props.user.profile &&
               <>
                 <Link to={`/birds/${id}/edit`} state={bird}>edit</Link>
                 <button onClick={() => props.handleDeleteBird(id)}>delete</button>
               </>
-            {/* } */}
+            }
           </span>
         </header>
       </article>

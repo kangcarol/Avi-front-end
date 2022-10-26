@@ -14,14 +14,14 @@ const NavBar = ({ user, handleLogout}) => {
     console.log(user),
     <ul>
       <h2>Welcome, {user ? user.name : 'Birder'}</h2>
-      {/* <img src={profile.photo} alt="User's avatar" style={{width: "40px"}}/> */}
       <li><NavLink to="/profiles">Profiles</NavLink></li>
       <li><NavLink to="/birds">Birds</NavLink></li>
       <li><NavLink to="/supplylists">Supply Lists</NavLink></li>
       <li><NavLink to="/events">Events</NavLink></li>
       <li><NavLink to="/questions">Questions</NavLink></li>
       <li><NavLink to="" onClick={handleLogout}>LOG OUT</NavLink></li>
-      <li><NavLink to="/changePassword">Change Password</NavLink></li>
+      {/* <li><NavLink to="/changePassword">Change Password</NavLink></li> */}
+      {/* <img src={profile.photo} alt="User's avatar" style={{width: "40px"}}/> */}
     </ul>
   )
 

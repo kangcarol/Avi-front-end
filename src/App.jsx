@@ -59,7 +59,7 @@ const App = () => {
   const [questions, setQuestions] = useState([])
   const [seen,setSeen] = useState([])
   const [wishlist,setWishlist] = useState([])
-
+  const [about,setAbout] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -240,7 +240,7 @@ const App = () => {
           path="/profiles"
           element={
             <ProtectedRoute user={user}>
-              <Profiles />
+              <Profiles user={user}/>
             </ProtectedRoute>
           }
         />
@@ -249,6 +249,7 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <ProfileDetails
+              user={user}
               seen={seen}
               wishlist={wishlist}
               handleAddWishlist={handleAddWishlist}

@@ -35,10 +35,11 @@ const ProfileDetails = (props) => {
           </span>
           <img src={profile.photo} alt="User's avatar" style={{width: "40px"}}/>
           <span>
+            {profile._id === props.user.profile &&
             <>
-              {/* <Link to={`/profiles/${id}/edit`} state={profile}>edit</Link> */}
+              <Link to={`/profiles/${id}/edit`} state={props.profile}>edit</Link>
             </>
-            {/* } */}
+            }
           </span>
         </header>
 
