@@ -81,7 +81,13 @@ const App = () => {
     setWishlist(wishlist.filter((bird, i) => bird._id !== addSeen._id))
   }
 
-  const handleAddBird = async (birdData) => {
+  const birdPhotoHelper = async (photo, id) => {
+    const photoData = new FormData()
+    photoData.append('photo', photo)
+    return await birdService.addPhoto(photoData, id)
+  }
+
+  const handleAddBird = async (birdData, photo) => {
     // birdData will have a shape of:
     //   {
     //     "name": "string",
@@ -89,6 +95,9 @@ const App = () => {
     //     etc etc...
     //   }
     const newBird = await birdService.create(birdData)
+    if (photo) {
+      newBird.photo = await birdPhotoHelper(photo, newBird._id )
+    }
     setBirds([newBird, ...birds])
     navigate('/birds')
   }
