@@ -12,7 +12,7 @@ const ProfileCard = ({ profile }) => {
         <article className={styles.container}>
           <header>
             <span>
-            <img src={profile.photo} alt="User's avatar" style={{width: "40px"}}/>
+              <img src={profile.photo} alt="User's avatar" style={{width: "40px"}}/>
             </span>
           </header>
           <h3>{profile.name.toUpperCase()}</h3>

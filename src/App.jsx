@@ -78,17 +78,36 @@ const App = () => {
 
   const handleSeen = (addSeen) => {
     setSeen([addSeen, ...seen])
+    setWishlist(wishlist.filter((bird, i) => bird._id !== addSeen._id))
   }
 
-  const handleAddBird = async (birdData) => {
+  const birdPhotoHelper = async (photo, id) => {
+    const photoData = new FormData()
+    photoData.append('photo', photo)
+    return await birdService.addPhoto(photoData, id)
+  }
+
+  const handleAddBird = async (birdData, photo) => {
+    // birdData will have a shape of:
+    //   {
+    //     "name": "string",
+    //     "descripton": "string",
+    //     etc etc...
+    //   }
     const newBird = await birdService.create(birdData)
+    if (photo) {
+      newBird.photo = await birdPhotoHelper(photo, newBird._id )
+    }
     setBirds([newBird, ...birds])
     navigate('/birds')
   }
 
-  const handleUpdateBird = async (birdData) => {
+  const handleUpdateBird = async (birdData, photo) => {
     // birdData._id will be 634daa34dc0dfecfbb5767de, as example
     const updatedBird = await birdService.update(birdData)
+    if(photo) {
+      updatedBird.photo = await birdPhotoHelper(photo, updatedBird._id)
+    }
     const updatedBirdsData = birds.map(bird => {
       return birdData._id === bird._id ? updatedBird : bird
     })

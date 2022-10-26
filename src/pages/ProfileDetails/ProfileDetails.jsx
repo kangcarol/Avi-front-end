@@ -41,17 +41,16 @@ const ProfileDetails = (props) => {
             {/* } */}
           </span>
         </header>
-        <div>
-        {/* {props.wishlist.map(bird => (
-              {bird.name}
-            ))} */}
 
-        {props.wishlist.map(bird => (
-          <BirdCard handleAddWishlist={props.handleAddWishlist} bird={bird} key={bird._id}/>
-        ))}
-        {props.seen.map(bird => (
-          <BirdCard handleSeen={props.handleSeen} bird={bird} key={bird._id}/>
-        ))}
+        <div>
+        <h1>Seen</h1>
+          {props.seen.map(bird => (
+            <BirdCard  bird={bird} key={bird._id}/>
+            ))}
+        <h1>Wishlist</h1>
+          {props.wishlist.map(bird => (
+            <BirdCard wishlist={true} handleSeen={props.handleSeen}  bird={bird} key={bird._id}/>
+          ))}
         </div>
 
       </article>

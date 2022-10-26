@@ -8,13 +8,20 @@ const BirdNew = (props) => {
     category: 'News',
   })
 
+  const [photoData, setPhotoData] = useState({})
+
   const handleChange = ({ target }) => {
     setForm({ ...form, [target.name]: target.value })
   }
 
+  const handleChangePhoto =(e) => {
+    setPhotoData({ photo: e.target.files[0] })
+    //I think photo is image
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
-    props.handleAddBird(form)
+    props.handleAddBird(form, photoData.photo)
   }
 
   return (
@@ -40,15 +47,16 @@ const BirdNew = (props) => {
           placeholder="Description"
           onChange={handleChange}
         />
-        <label htmlFor="category-input">Photo</label>
-        {/* <textarea
-          required
-          name="image"
-          id="image-bird"
-          value={form.image}
-          onChange={handleChange}
-        />    
-        <button type="submit">add photo</button> */}
+          <label htmlFor="photo-upload" className="form-label">
+						Upload Photo
+					</label>
+					<input
+						type="file"
+						className="form-control"
+						id="photo-upload"
+						name="photo"
+						onChange={handleChangePhoto}
+					/>
 
         <button type="submit">save</button>
       </form>

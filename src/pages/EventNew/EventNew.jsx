@@ -1,11 +1,15 @@
 import { useState } from "react";
 import styles from './EventNew.module.css'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const EventNew = (props) => {
   const [form, setForm]  = useState({
     title: '',
-    text: '',
-    category: 'News',
+    location: '',
+    owner: '',
+    date: Date ,
+    details: '',
   })
 
   const handleChange = ({ target }) => {
@@ -19,56 +23,57 @@ const EventNew = (props) => {
 
   return (
     <main className={styles.container}>
-      <form onSubmit={handleSubmit}>
+      <form className={styles.inputForm} 
+        onSubmit={handleSubmit}>
         <label htmlFor="title-input">Title</label>
         <input
           required
           type="text"
           name="title"
-          id="title-input"
+          className={styles.titleInput}
           value={form.title}
           placeholder="Title"
           onChange={handleChange}
         />
         <label htmlFor="location-input">Location</label>
-				<textarea
+				<input
           required
           type="text"
           name="location"
-          id="location-input"
+          className={styles.locationInput}
           value={form.location}
           placeholder="Location"
           onChange={handleChange}
         />
         <label htmlFor="owner-input">Owner</label>
-        <textarea
+        <input
           required
           type="text"
           name="owner"
-          id="owner-input"
+          className={styles.ownerInput}
           value={form.owner}
           placeholder="Owner"
           onChange={handleChange}
         />
          <label htmlFor="date-input">Date</label>
-        <textarea
+        <input
           required
           type="date"
           name="date"
-          id="owner-input"
+          className={styles.dateInput}
           value={form.date}
           placeholder="Date"
           onChange={handleChange}
         />
          <label htmlFor="details-input">Details</label>
-        <textarea
+        <input
           required
-          type="text"
+          type='text'
           name="details"
-          id="details-input"
+          className={styles.inputDetails}
           value={form.details}
-          placeholder="Details"
           onChange={handleChange}
+          placeholder="Details"
         />
         <button type="submit">SUBMIT</button>
       </form>
