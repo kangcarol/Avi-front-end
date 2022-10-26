@@ -79,10 +79,22 @@ const deleteBird = async (id) => {
   }
 }
 
+async function addPhoto(photoData, birdId) {
+  const res = await fetch(`${BASE_URL}/${birdId}/add-photo`, {
+    method: 'PUT',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    },
+    body: photoData
+  })
+  return await res.json()
+}
+
 export {
   index,
   show,
   create,
   update,
   deleteBird,
+  addPhoto,
 }
