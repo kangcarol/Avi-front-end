@@ -7,7 +7,7 @@ const EventList = (props) => {
   const navigate = useNavigate();
   return (
     <>
-      <main className={styles.container}>
+      <main className={styles.event}>
         <h1>EVENT LIST</h1>
         <button onClick={() => {navigate("/events/new")}}>ADD AN EVENT</button>
         {props.events.map(event => (

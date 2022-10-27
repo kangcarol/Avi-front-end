@@ -10,13 +10,13 @@ const EventCard = ({ event }) => {
 
   return (
     
-      <article className={styles.container}>
+      <article className={styles.event}>
         <header>
-          <span>
+          <>
             <Link to={`/events/${event._id}`}>
               <h1>{event.title}</h1>
             </Link>
-          </span>
+          </>
         </header>
         <p>{event.location}</p>
         <p>{event?.owner?.name}</p>
