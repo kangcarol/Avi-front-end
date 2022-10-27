@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from './ProfileCard.module.css'
+import ProfileIcon from '../../assets/branding/profile.png'
 
 // Components
 // import Icon from "../Icon/Icon"
@@ -12,11 +13,13 @@ const ProfileCard = ({ profile }) => {
         <article className={styles.container}>
           <header>
             <span>
+              {profile.photo ?
               <img src={profile.photo} alt="User's avatar" style={{width: "40px"}}/>
+              :
+              <img src={ProfileIcon} alt="Default avatar" style={{width: "40px"}}/>}
             </span>
           </header>
           <h3>{profile.name.toUpperCase()}</h3>
-          <p>{profile.about}</p>
         </article>
       </Link>
     </>
