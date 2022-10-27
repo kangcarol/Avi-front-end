@@ -23,8 +23,6 @@ const EventCard = ({ event }) => {
         <p>{formattedDate} - {formattedTime}</p>
         <p>{event.details}</p>
       </article>
-   
-
     
   )
 }
