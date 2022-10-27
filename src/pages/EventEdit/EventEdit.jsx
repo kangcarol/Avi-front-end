@@ -18,7 +18,7 @@ const EventEdit = (props) => {
   }
 
   return (
-    <main className={styles.container}>
+    <main className={styles.event}>
       <form onSubmit={handleSubmit}>
         <h1>Edit Event</h1>
         <label htmlFor="title-input">Title</label>
