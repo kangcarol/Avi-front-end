@@ -50,7 +50,11 @@ if (!question) return <Loading />
   <h1>Comments</h1>
   <NewAnswer handleAddAnswer={handleAddAnswer}/>
   <Answers answers ={question.answers} user={props.user} />
+  {console.log('QQQ',question)}
 </section>
+<span>
+<Link to={`/questions`} state={question}>Back to all field notes</Link>
+</span>
     </main>
   )
 }

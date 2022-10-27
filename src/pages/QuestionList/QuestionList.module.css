@@ -3,9 +3,10 @@ h1 {
   padding: 15px;
 }
 
-.container {
+.container div {
   gap: 20px;
   width: 100%;
+
   display: grid;
   padding: 21px;
   grid-template-columns: repeat(1, 1fr);
@@ -13,7 +14,21 @@ h1 {
 
 .container button {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  font-size: 1.5rem;
+  width: 50%;
+  height: 75%;
+  padding: 18px 18px;
+  border-radius: 10px;
+  font-size: 25px;
+  font-family:'Courier Prime', monospace;
+  color: rgb(240, 210, 189);
+  font-weight: bold;
+  background-color: rgb(109, 104, 117);
+  /* background-image: linear-gradient( rgb(240, 210, 189), rgb(109, 104, 117)); */
+}
+
+span {
+  display: flex;
+  align-items: flex-start;
 }
 
 a {
@@ -26,19 +41,19 @@ a :hover{
 }
 
 @media only screen and (min-width: 900px) {
-  .container {
+  .container div {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media only screen and (min-width: 1200px) {
-  .container {
+  .container div {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media only screen and (min-width: 1500px) {
-  .container {
+  .container div {
     grid-template-columns: repeat(4, 1fr);
   }
 }
