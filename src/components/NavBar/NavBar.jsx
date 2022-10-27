@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom'
 import styles from './NavBar.module.css'
-import { slide as Menu } from 'react-burger-menu'
 
 const NavBar = ({ user, handleLogout}) => {
 
