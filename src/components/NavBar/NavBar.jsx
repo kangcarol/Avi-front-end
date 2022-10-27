@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import styles from './NavBar.module.css'
+import DefaultBirdPhoto from '../../assets/branding/AVI-nav-logo.svg'
 
 const NavBar = ({ user, handleLogout}) => {
 
@@ -11,28 +12,24 @@ const NavBar = ({ user, handleLogout}) => {
   )
 
   const protectedLinks = (
-    console.log(user),
-    <ul>
+
+    <ul >
       <>
-      <h2><NavLink to={`/profiles/${user.profile}`}>   Welcome, {user ? user.name.toUpperCase() : 'Birder'}</NavLink></h2>
-      <li><NavLink to="/profiles">BIRDERS</NavLink></li>
-      <li><NavLink to="/birds">BIRDS</NavLink></li>
-      <li><NavLink to="/supplylists">SUPPLY LISTS</NavLink></li>
-      <li><NavLink to="/events">EVENTS</NavLink></li>
-      <li><NavLink to="/questions">FIELD NOTES</NavLink></li>
-      <li><NavLink to="" onClick={handleLogout}>LOG OUT</NavLink></li>
+      <NavLink to="/"><img src={DefaultBirdPhoto} alt="logo" style={{width: "55px"}}/></NavLink>
+      <h2 className={styles.landing}><NavLink to={`/profiles/${user?.profile}`}>   Welcome, {user ? user.name.toUpperCase() : 'Birder'}</NavLink></h2>
+      <li ><NavLink to="/birds">BIRDS</NavLink></li>
+      <li ><NavLink to="/profiles">BIRDERS</NavLink></li>
+      <li ><NavLink to="/supplylists">SUPPLY LISTS</NavLink></li>
+      <li ><NavLink to="/events">EVENTS</NavLink></li>
+      <li ><NavLink to="/questions">FIELD NOTES</NavLink></li>
+      <li ><NavLink to="/logout" onClick={handleLogout}>LOG OUT</NavLink></li>
       {/* <li><NavLink to="/changePassword">Change Password</NavLink></li> */}
-      {/* {user ? 
-        <img src={user.profile.photo} alt="User's avatar" style={{width: "40px"}}/>
-        :
-        ''
-      } */}
       </>
     </ul>
   )
 
   return (
-    <nav className={styles.container}>
+    <nav className={styles.nav}>
       {/* <NavNavLink to={'/'}><img src={Logo} alt="Logo" /></NavNavLink> */}
       {user?  protectedLinks : publicLinks}
     </nav>
