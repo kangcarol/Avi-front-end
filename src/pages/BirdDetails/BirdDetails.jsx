@@ -27,7 +27,7 @@ const BirdDetails = (props) => {
   if (!bird) return <Loading />
 
   return (
-    <main className={styles.container}>
+    <main className={styles.birdDetails}>
       <article>
         <header>
           <h3>{bird.name.toUpperCase()}</h3>
