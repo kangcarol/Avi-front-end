@@ -22,7 +22,7 @@ const SupplyListDetails = (props) => {
 
   return (
     <div>
-      <main className={styles.container}>
+      <main className={styles.supplylist}>
         <article>
           <header>
             <h2>{supplylist.title.toUpperCase()}</h2>

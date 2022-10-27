@@ -7,7 +7,7 @@ import AuthorInfo from "../AuthorInfo/AuthorInfo"
 const SupplyListCard = ({ supplylist }) => {
   return (
     <Link to={`/supplylists/${supplylist._id}`}>
-      <article className={styles.container}>
+      <article className={styles.supplylist}>
         <header>
           <span>
             <h1>{supplylist.title}</h1>
