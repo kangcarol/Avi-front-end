@@ -21,7 +21,11 @@ const NavBar = ({ user, handleLogout}) => {
       <li><NavLink to="/questions">Questions</NavLink></li>
       <li><NavLink to="" onClick={handleLogout}>LOG OUT</NavLink></li>
       {/* <li><NavLink to="/changePassword">Change Password</NavLink></li> */}
-      {/* <img src={profile.photo} alt="User's avatar" style={{width: "40px"}}/> */}
+      {/* {user ? 
+        <img src={user.profile.photo} alt="User's avatar" style={{width: "40px"}}/>
+        :
+        ''
+      } */}
     </ul>
   )
 
