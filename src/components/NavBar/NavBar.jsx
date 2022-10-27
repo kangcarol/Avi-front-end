@@ -14,11 +14,11 @@ const NavBar = ({ user, handleLogout}) => {
     console.log(user),
     <ul>
       <h2>Welcome, {user ? user.name : 'Birder'}</h2>
-      <li><NavLink to="/profiles">Profiles</NavLink></li>
-      <li><NavLink to="/birds">Birds</NavLink></li>
-      <li><NavLink to="/supplylists">Supply Lists</NavLink></li>
-      <li><NavLink to="/events">Events</NavLink></li>
-      <li><NavLink to="/questions">Questions</NavLink></li>
+      <li><NavLink to="/profiles">BIRDERS</NavLink></li>
+      <li><NavLink to="/birds">BIRDS</NavLink></li>
+      <li><NavLink to="/supplylists">SUPPLY LISTS</NavLink></li>
+      <li><NavLink to="/events">EVENTS</NavLink></li>
+      <li><NavLink to="/questions">FIELD NOTES</NavLink></li>
       <li><NavLink to="" onClick={handleLogout}>LOG OUT</NavLink></li>
       {/* <li><NavLink to="/changePassword">Change Password</NavLink></li> */}
       {/* {user ? 
