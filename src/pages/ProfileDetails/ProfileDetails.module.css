@@ -5,6 +5,7 @@
   align-items: center;
   flex-direction: column;
   background-color: var(--card-background);
+
 }
 
 .profileDetails article, .profileDetails > section {
