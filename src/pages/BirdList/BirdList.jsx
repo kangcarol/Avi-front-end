@@ -8,7 +8,7 @@ const BirdList = (props) => {
 
   return (
     <>
-      <main className={styles.container}>
+      <main className={styles.birdList}>
       <h1>Bird List</h1>
       <button onClick={() => {navigate("/birds/new")}}>add a bird</button>
       {props.birds.map(bird => (

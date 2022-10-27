@@ -6,7 +6,6 @@ import ProfileIcon from '../../assets/branding/profile.png'
 
 // components
 import Loading from "../Loading/Loading"
-import AuthorInfo from "../../components/AuthorInfo/AuthorInfo"
 
 // Services
 import * as profileService from "../../services/profileService"
@@ -26,7 +25,7 @@ const ProfileDetails = (props) => {
   if (!profile) return <Loading />
 
   return (
-    <main className={styles.container}>
+    <main className={styles.profileDetails}>
       <article>
         <header>
           <h3>{profile.name.toUpperCase()}</h3>

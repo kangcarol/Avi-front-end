@@ -10,17 +10,15 @@ const BirdCard = (props) => {
 
   return (
     <>
-        <article className={styles.container}>
+
+        <article className={styles.birdCard}>
           <header>
             <span>
-              {props.bird.photo ?
+            {props.bird.photo ?
               <img src={props.bird.photo} className="birdPhoto" alt={props.bird.name} style={{width: '340px'}} />
               :
               <img src={BirdIcon} alt="Default bird" style={{width: "40px"}}/>}
-
-              <Link to={`/birds/${props.bird._id}`}>
-                <h1>{props.bird.name.toUpperCase()}</h1>
-              </Link>
+              <Link to={`/birds/${props.bird._id}`}><h1>{props.bird.name.toUpperCase()}</h1></Link>
             </span>
           </header>
 
