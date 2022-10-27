@@ -32,7 +32,7 @@ if (!question) return <Loading />
       <article>
           {console.log('author here', question.author)}
         <header>
-          <h1>DETAILS</h1>
+          
           <h3>{question.question}</h3>
           <span>
             {question.author._id === props.user.profile && 

@@ -11,10 +11,10 @@ const QuestionList = (props) => {
       {props.questions.map(question => (
         <QuestionCard question={question} key={question._id}/>
       ))}
-      </div>
-      <span>
+  
       <button onClick={() => {navigate('/questions/new')}}>Create a New Post</button>
-    </span>
+  
+    </div>
     </main>
   )
 }
