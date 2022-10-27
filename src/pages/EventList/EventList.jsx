@@ -2,6 +2,7 @@ import styles from "./EventList.module.css"
 import EventCard from "../../components/EventCard/EventCard";
 import { useNavigate } from "react-router-dom";
 
+
 const EventList = (props) => {
   const navigate = useNavigate();
   return (

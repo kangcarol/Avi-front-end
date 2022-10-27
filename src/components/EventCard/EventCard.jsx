@@ -19,7 +19,7 @@ const EventCard = ({ event }) => {
           </span>
         </header>
         <p>{event.location}</p>
-        <p>{event.owner.name}</p>
+        <p>{event?.owner?.name}</p>
         <p>{formattedDate} - {formattedTime}</p>
         <p>{event.details}</p>
       </article>

@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useLocation } from "react-router-dom"
 import styles from './EventEdit.module.css'
 
+
 const EventEdit = (props) => {
   const { state } = useLocation()
   const [form, setForm] = useState(state)
