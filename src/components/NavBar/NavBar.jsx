@@ -16,7 +16,7 @@ const NavBar = ({ user, handleLogout}) => {
     <ul >
       <>
       <NavLink to="/"><img src={DefaultBirdPhoto} alt="logo" style={{width: "55px"}}/></NavLink>
-      <h2><NavLink to={`/profiles/${user?.profile}`}>   Welcome, {user ? user.name.toUpperCase() : 'Birder'}</NavLink></h2>
+      <h2 className={styles.landing}><NavLink to={`/profiles/${user?.profile}`}>   Welcome, {user ? user.name.toUpperCase() : 'Birder'}</NavLink></h2>
       <li ><NavLink to="/birds">BIRDS</NavLink></li>
       <li ><NavLink to="/profiles">BIRDERS</NavLink></li>
       <li ><NavLink to="/supplylists">SUPPLY LISTS</NavLink></li>
