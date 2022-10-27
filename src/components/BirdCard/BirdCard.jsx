@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from './BirdCard.module.css'
 import { useLocation } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import BirdIcon from '../../assets/branding/profile.png'
 
 const BirdCard = (props) => {

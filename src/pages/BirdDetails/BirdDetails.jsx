@@ -30,7 +30,7 @@ const BirdDetails = (props) => {
     <main className={styles.birdDetails}>
       <article>
         <header>
-          <h3>{bird.name.toUpperCase()}</h3>
+          <h1>{bird.name.toUpperCase()}</h1>
           <p>{bird.description}</p>
           <span>
             {/* <AuthorInfo content={bird} /> */}
@@ -41,6 +41,7 @@ const BirdDetails = (props) => {
               </>
             }
           </span>
+          <Link to={`/birds`} state={bird}>Back to bird list</Link>
         </header>
       </article>
     </main>

@@ -11,23 +11,25 @@ const NewAnswer = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    props.handleAddComment(form)
+    props.handleAddAnswer(form)
     setForm({ text: '' })
   }
 
   return (
-    <form className={styles.container} onSubmit={handleSubmit}>
+    <main className={styles.container} >
+    <form onSubmit={handleSubmit}>
       <textarea
         required
         type="text"
         name="text"
         id="text-input"
-        value={form.answer}
+        value={form.text}
         placeholder="share your response"
         onChange={handleChange}
       />
       <button type="submit">Submit</button>
     </form>
+    </main>
   )
 }
 
