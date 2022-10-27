@@ -12,7 +12,6 @@ const NavBar = ({ user, handleLogout}) => {
   )
 
   const protectedLinks = (
-
     <ul >
       <>
       <NavLink to="/"><img src={DefaultBirdPhoto} alt="logo" style={{width: "55px"}}/></NavLink>
