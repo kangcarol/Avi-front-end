@@ -28,7 +28,7 @@ const SupplyListNew = (props) => {
         name="title"
         id="title-input"
         value={form.title}
-        placeholder="Title"
+        placeholder="eg. Went to see penguins"
         onChange={handleChange}
       />
       <label htmlFor="items-input">Items</label>
@@ -38,7 +38,7 @@ const SupplyListNew = (props) => {
         name="items"
         id="text-input"
         value={form.text}
-        placeholder="Text"
+        placeholder="eg. warm jacket"
         onChange={handleChange}
       />
       <label htmlFor="description-input">Description</label>
@@ -48,10 +48,10 @@ const SupplyListNew = (props) => {
         name="description"
         id="text-input"
         value={form.text}
-        placeholder="Text"
+        placeholder="additional details"
         onChange={handleChange}
       />
-      <button type="submit">SUBMIT</button>
+      <button className="btn btn-secondary" type="submit">SUBMIT</button>
       </form>
     </main>
   )
