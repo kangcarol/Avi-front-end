@@ -72,6 +72,7 @@ const deleteQuestion = async (id) => {
 
 const createAnswer = async (id, answerData) => {
   try {
+    console.log('questionService', answerData)
     const res = await fetch(`${BASE_URL}/${id}/answers`, {
       method: 'POST',
       headers: {
@@ -82,7 +83,7 @@ const createAnswer = async (id, answerData) => {
     })
     return res.json()
   } catch (error) {
-    console.log(error)
+    console.log('at questionservice', error)
   }
 }
 
