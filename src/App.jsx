@@ -92,12 +92,6 @@ const App = () => {
   }
 
   const handleAddBird = async (birdData, photo) => {
-    // birdData will have a shape of:
-    //   {
-    //     "name": "string",
-    //     "descripton": "string",
-    //     etc etc...
-    //   }
     const newBird = await birdService.create(birdData)
     if (photo) {
       newBird.photo = await birdPhotoHelper(photo, newBird._id )

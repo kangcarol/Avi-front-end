@@ -13,7 +13,8 @@ const NavBar = ({ user, handleLogout}) => {
   const protectedLinks = (
     console.log(user),
     <ul>
-      <h2>Welcome, {user ? user.name : 'Birder'}</h2>
+      <>
+      <h2><NavLink to={`/profiles/${user.profile}`}>   Welcome, {user ? user.name.toUpperCase() : 'Birder'}</NavLink></h2>
       <li><NavLink to="/profiles">BIRDERS</NavLink></li>
       <li><NavLink to="/birds">BIRDS</NavLink></li>
       <li><NavLink to="/supplylists">SUPPLY LISTS</NavLink></li>
@@ -26,6 +27,7 @@ const NavBar = ({ user, handleLogout}) => {
         :
         ''
       } */}
+      </>
     </ul>
   )
 
