@@ -24,6 +24,7 @@ const Profiles = () => {
     }
     fetchProfiles()
   }, [])
+console.log("PROFILES", profiles)
 
   return (
     <>

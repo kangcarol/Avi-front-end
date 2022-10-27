@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
+import moment from 'moment/moment'
 
 // components
 import Loading from "../Loading/Loading"
-// import AuthorInfo from "../../components/AuthorInfo/AuthorInfo"
-
 import styles from "./EventDetails.module.css"
 
 // Services
@@ -14,6 +13,11 @@ const EventDetails = (props) => {
   const { id } = useParams()
   const [event, setEvent] = useState(null)
 
+  const d = event?.date
+  const t = event?.date
+  const formattedTime = moment(t).format('h:mm A')
+  const formattedDate= moment(d).format('L')
+
   useEffect(() => {
     const fetchEvent = async () => {
       const data = await eventService.show(id)
@@ -22,36 +26,29 @@ const EventDetails = (props) => {
     fetchEvent()
   }, [id])
 
-  console.log("Styles:", styles);
-
   if (!event) return <Loading />
 
   return (
     <main className={styles.container}>
       <article>
         <header>
-          {/* <h3>{event.category.toUpperCase()}</h3> */}
           <h1>{event.title}</h1>
-          <span>
-            {/* <AuthorInfo content={event} />
-
-            {event.author._id === props.user.profile && */}
-              <>
-                <Link to={`/events/${id}/edit`} state={event}>Edit</Link>
-                <button
-                  onClick={() => props.handleDeleteEvent(id)}
-                >
-                  Delete
-                </button>
-              </>
-            {/* } */}
-          </span>
         </header>
         <p>{event.title}</p>
         <p>{event.location}</p>
         <p>{event.owner.name}</p>
         <p>{event.details}</p>
-        <p>{event.date}</p>
+        <p>{formattedDate} - {formattedTime}</p>
+        <span>
+          <>
+            <Link to={`/events/${id}/edit`} state={event}>Edit</Link>
+            <button
+              onClick={() => props.handleDeleteEvent(id)}
+            >
+              Delete
+            </button>
+          </>
+        </span>
       </article>
     </main>
   )

@@ -1,10 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from './BirdCard.module.css'
 import { useLocation } from "react-router-dom";
-
-// Components
-// import Icon from "../Icon/Icon"
-// import AuthorInfo from "../AuthorInfo/AuthorInfo"
+import BirdIcon from '../../assets/branding/profile.png'
 
 const BirdCard = (props) => {
   const location = useLocation();
@@ -13,31 +10,33 @@ const BirdCard = (props) => {
 
   return (
     <>
-      <Link to={`/birds/${props.bird._id}`}>
         <article className={styles.container}>
           <header>
             <span>
-              <img src={props.bird.photo} className="birdPhoto" alt="{bird.name}" style={{width: '340px'}} />
-              <h1>{props.bird.name.toUpperCase()}</h1>
+              {props.bird.photo ?
+              <img src={props.bird.photo} className="birdPhoto" alt={props.bird.name} style={{width: '340px'}} />
+              :
+              <img src={BirdIcon} alt="Default bird" style={{width: "40px"}}/>}
+
+              <Link to={`/birds/${props.bird._id}`}>
+                <h1>{props.bird.name.toUpperCase()}</h1>
+              </Link>
             </span>
-            {/* <AuthorInfo content={bird} /> */}
           </header>
-          <p>{props.bird.description}</p> 
 
         {(location.pathname ==='/birds') || (location.pathname !=='/birds' && props.wishlist ) ?
 
-          <button id="seen-btn" onClick={() => props.handleSeen(props.bird)}>seen</button>
+          <button onClick={() => props.handleSeen(props.bird) }>seen</button>
           :
           ''
         }
         {(location.pathname ==='/birds') || (location.pathname !=='/birds' && props.wishlist===false) ?
 
-        <button id="wishlist-btn" onClick={() => props.handleAddWishlist(props.bird)}>+ wishlist</button>
+        <button onClick={() => props.handleAddWishlist(props.bird)}>+ wishlist</button>
           :
           ''
         }
         </article>
-      </Link>
     </>
   )
 

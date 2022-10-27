@@ -38,6 +38,15 @@
   -webkit-line-clamp: 1;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
+  color: rgb(99, 124, 164);
+}
+
+.container a {
+  text-decoration: none; 
+}
+
+.container h1:hover {
+  color: rgb(87, 74, 226);
 }
 
 .container p {

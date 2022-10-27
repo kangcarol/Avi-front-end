@@ -4,11 +4,13 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const EventNew = (props) => {
+  const today = new Date()
   const [form, setForm]  = useState({
     title: '',
     location: '',
     owner: '',
-    date: Date ,
+    date: today.toISOString().slice(0, 16),
+    time: 'time',
     details: '',
   })
 
@@ -45,8 +47,8 @@ const EventNew = (props) => {
           placeholder="Location"
           onChange={handleChange}
         />
-        <label htmlFor="owner-input">Owner</label>
-        <input
+      {/* <label htmlFor="owner-input">Owner</label>
+        <textarea
           required
           type="text"
           name="owner"
@@ -54,17 +56,18 @@ const EventNew = (props) => {
           value={form.owner}
           placeholder="Owner"
           onChange={handleChange}
-        />
+        /> */}
          <label htmlFor="date-input">Date</label>
         <input
           required
-          type="date"
+          type="datetime-local"
           name="date"
           className={styles.dateInput}
           value={form.date}
           placeholder="Date"
           onChange={handleChange}
         />
+        <label htmlFor="time-input">Time</label>
          <label htmlFor="details-input">Details</label>
         <input
           required
@@ -75,7 +78,8 @@ const EventNew = (props) => {
           onChange={handleChange}
           placeholder="Details"
         />
-        <button type="submit">SUBMIT</button>
+    
+        <button className={styles.addButton} type="submit">SUBMIT</button>
       </form>
     </main>
   )

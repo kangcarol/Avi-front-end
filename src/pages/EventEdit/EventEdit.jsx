@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useLocation } from "react-router-dom"
 import styles from './EventEdit.module.css'
 
+
 const EventEdit = (props) => {
   const { state } = useLocation()
   const [form, setForm] = useState(state)
@@ -40,24 +41,24 @@ const EventEdit = (props) => {
           placeholder="location"
           onChange={handleChange}
         />
-         <label htmlFor="owner-input">Owner</label>
-        <textarea
-          required
-          type="text"
-          name="owner"
-          id="owner-input"
-          value={form.owner.name}
-          placeholder="owner"
-          onChange={handleChange}
-        />
          <label htmlFor="date-input">Date</label>
-        <textarea
+        <input
           required
-          type="text"
+          type="date"
           name="date"
           id="date-input"
           value={form.date}
           placeholder="date"
+          onChange={handleChange}
+        />
+        <label htmlFor="time-input">Time</label>
+        <input
+          required
+          type="time"
+          name="time"
+          id="time-input"
+          value={form.time}
+          placeholder="time"
           onChange={handleChange}
         />
          <label htmlFor="details-input">Details</label>

@@ -10,7 +10,6 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 
 import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
-import ProfileEdit from './pages/ProfileEdit/ProfileEdit'
 
 import BirdList from './pages/BirdList/BirdList'
 import BirdDetails from './pages/BirdDetails/BirdDetails'
@@ -59,7 +58,7 @@ const App = () => {
   const [questions, setQuestions] = useState([])
   const [seen,setSeen] = useState([])
   const [wishlist,setWishlist] = useState([])
-
+  // const [about,setAbout] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -74,11 +73,15 @@ const App = () => {
   const handleAddWishlist = (addedBird) => {
     setWishlist([addedBird, ...wishlist])
     console.log(wishlist, "WISHLIST")
+    navigate(`/profiles/${user.profile}`)
   }
+
+  console.log("USER", user)
 
   const handleSeen = (addSeen) => {
     setSeen([addSeen, ...seen])
     setWishlist(wishlist.filter((bird, i) => bird._id !== addSeen._id))
+    navigate(`/profiles/${user.profile}`)
   }
 
   const birdPhotoHelper = async (photo, id) => {
@@ -88,12 +91,6 @@ const App = () => {
   }
 
   const handleAddBird = async (birdData, photo) => {
-    // birdData will have a shape of:
-    //   {
-    //     "name": "string",
-    //     "descripton": "string",
-    //     etc etc...
-    //   }
     const newBird = await birdService.create(birdData)
     if (photo) {
       newBird.photo = await birdPhotoHelper(photo, newBird._id )
@@ -153,9 +150,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    console.log("The useEffect is running");
     const fetchAllEvents = async () => {
-      console.log('The Fetch All function is running')
       const data = await eventService.index()
       setEvents(data)
     }
@@ -240,7 +235,7 @@ const App = () => {
           path="/profiles"
           element={
             <ProtectedRoute user={user}>
-              <Profiles />
+              <Profiles user={user}/>
             </ProtectedRoute>
           }
         />
@@ -249,6 +244,7 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <ProfileDetails
+              user={user}
               seen={seen}
               wishlist={wishlist}
               handleAddWishlist={handleAddWishlist}
@@ -320,7 +316,7 @@ const App = () => {
           path="/events"
           element={
             <ProtectedRoute user={user}>
-              <EventList events={events}
+              <EventList events={events} 
               />
             </ProtectedRoute>
           }
