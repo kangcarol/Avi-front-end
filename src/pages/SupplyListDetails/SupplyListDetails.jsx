@@ -21,30 +21,32 @@ const SupplyListDetails = (props) => {
   if (!supplylist) return <Loading />
 
   return (
-    <main className={styles.container}>
-      <article>
-        <header>
-          <h2>{supplylist.title.toUpperCase()}</h2>
-          <span>
-            {/* <AuthorInfo content={supplylist} /> */}
-          </span>
-        </header>
-        <p>Owner: {supplylist.owner.name}</p>
-        <p>Description: {supplylist.description}</p>
-        <p>Items: {supplylist.items}</p>
-      </article>
-      <section>
-      <span>
-        {/* <AuthorInfo content={supplylist} /> */}
-        {supplylist.owner._id === props.user.profile &&
-          <>
-            <Link to={`/supplylists/${id}/edit`} state={supplylist}>Edit</Link>
-            <button onClick={() => props.handleDeleteSupplyList(id)}>Delete</button>
-          </>
-        }
-          </span>
-      </section>
-    </main>
+    <div>
+      <main className={styles.container}>
+        <article>
+          <header>
+            <h2>{supplylist.title.toUpperCase()}</h2>
+            <span>
+              {/* <AuthorInfo content={supplylist} /> */}
+            </span>
+          </header>
+          <p><strong>Owner: </strong> {supplylist.owner.name}</p>
+          <p><strong>Description: </strong> {supplylist.description}</p>
+          <p><strong>Items: </strong> {supplylist.items}</p>
+        </article>
+        <section>
+        <span>
+          {/* <AuthorInfo content={supplylist} /> */}
+          {supplylist.owner._id === props.user.profile &&
+            <>
+              <Link to={`/supplylists/${id}/edit`} state={supplylist}>Edit</Link>
+              <button onClick={() => props.handleDeleteSupplyList(id)}>Delete</button>
+            </>
+          }
+            </span>
+        </section>
+      </main>
+    </div>
   )
 }
 

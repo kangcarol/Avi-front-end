@@ -9,7 +9,7 @@ const SupplyList = (props) => {
     <>
     <h1>Supply Lists</h1>
       <main className={styles.container}>
-        <button class="btn btn-secondary" onClick={() => {navigate('/supplylists/new')}}>Make A SupplyList</button>
+        <button className="btn btn-secondary" onClick={() => {navigate('/supplylists/new')}}>Make A SupplyList</button>
         {props.supplyLists.map((supplylist) => (
           <SupplyListCard key={supplylist._id} supplylist={supplylist} />
           ))}
