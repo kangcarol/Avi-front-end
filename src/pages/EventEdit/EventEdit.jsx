@@ -7,7 +7,6 @@ const EventEdit = (props) => {
   const { state } = useLocation()
   const [form, setForm] = useState(state)
 
-  console.log(form)
   const handleChange = ({ target }) => {
     setForm({ ...form, [target.name]: target.value })
   }
@@ -43,29 +42,19 @@ const EventEdit = (props) => {
           placeholder="location"
           onChange={handleChange}
         />
-         <div className={styles.event}>
-         <label htmlFor="date-input">Date</label>
+        <div className={styles.event}>
+        <label htmlFor="date-input">Date</label>
         <input
           required
-          type="date"
+          type="datetime-local"
           name="date"
           id="date-input"
           value={form.date}
           placeholder="date"
           onChange={handleChange}
         />
-        <label htmlFor="time-input">Time</label>
-        <input
-          required
-          type="time"
-          name="time"
-          id="time-input"
-          value={form.time}
-          placeholder="time"
-          onChange={handleChange}
-        />
         </div>
-         <label htmlFor="details-input">Details</label>
+        <label htmlFor="details-input">Details</label>
         <textarea
           required
           type="text"
