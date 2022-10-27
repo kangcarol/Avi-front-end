@@ -29,7 +29,7 @@ const EventDetails = (props) => {
   if (!event) return <Loading />
 
   return (
-    <main className={styles.container}>
+    <main className={styles.event}>
       <article>
         <header>
           <h1>{event.title}</h1>

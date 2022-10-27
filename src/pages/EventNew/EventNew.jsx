@@ -24,7 +24,7 @@ const EventNew = (props) => {
   }
 
   return (
-    <main className={styles.container}>
+    <main className={styles.event}>
       <form className={styles.inputForm} 
         onSubmit={handleSubmit}>
         <label htmlFor="title-input">Title</label>
@@ -57,7 +57,7 @@ const EventNew = (props) => {
           placeholder="Owner"
           onChange={handleChange}
         /> */}
-         <label htmlFor="date-input">Date</label>
+         <label htmlFor="date-input">Date and Time</label>
         <input
           required
           type="datetime-local"
@@ -67,7 +67,7 @@ const EventNew = (props) => {
           placeholder="Date"
           onChange={handleChange}
         />
-        <label htmlFor="time-input">Time</label>
+        <label htmlFor="time-input"></label>
          <label htmlFor="details-input">Details</label>
         <input
           required
