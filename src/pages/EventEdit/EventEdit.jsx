@@ -22,6 +22,7 @@ const EventEdit = (props) => {
       <form onSubmit={handleSubmit}>
         <h1>Edit Event</h1>
         <label htmlFor="title-input">Title</label>
+        <br></br>
         <input
           required
           type="text"
@@ -31,6 +32,7 @@ const EventEdit = (props) => {
           placeholder="Title"
           onChange={handleChange}
         />
+        <br></br>
         <label htmlFor="location-input">Location</label>
         <textarea
           required
@@ -41,6 +43,7 @@ const EventEdit = (props) => {
           placeholder="location"
           onChange={handleChange}
         />
+         <div className={styles.event}>
          <label htmlFor="date-input">Date</label>
         <input
           required
@@ -61,6 +64,7 @@ const EventEdit = (props) => {
           placeholder="time"
           onChange={handleChange}
         />
+        </div>
          <label htmlFor="details-input">Details</label>
         <textarea
           required
