@@ -14,7 +14,7 @@ const EventList = (props) => {
           <EventCard event={event} key={event._id}/>
         ))}
       </main>
-     </>
+    </>
   )
 }
 

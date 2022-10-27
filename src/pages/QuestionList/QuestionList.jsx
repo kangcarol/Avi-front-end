@@ -7,12 +7,14 @@ const QuestionList = (props) => {
   const navigate = useNavigate()
   return (
     <main className={styles.container}>
+      <div>
       {props.questions.map(question => (
         <QuestionCard question={question} key={question._id}/>
       ))}
-      <div>
-      <button onClick={() => {navigate('/questions/new')}}>Create a New Post</button>
       </div>
+      <span>
+      <button onClick={() => {navigate('/questions/new')}}>Create a New Post</button>
+    </span>
     </main>
   )
 }

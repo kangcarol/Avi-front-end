@@ -41,6 +41,7 @@ const BirdDetails = (props) => {
               </>
             }
           </span>
+          <Link to={`/birds`} state={bird}>Back to bird list</Link>
         </header>
       </article>
     </main>
