@@ -10,7 +10,6 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 
 import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
-import ProfileEdit from './pages/ProfileEdit/ProfileEdit'
 
 import BirdList from './pages/BirdList/BirdList'
 import BirdDetails from './pages/BirdDetails/BirdDetails'
