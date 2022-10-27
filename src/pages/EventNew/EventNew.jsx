@@ -8,7 +8,8 @@ const EventNew = (props) => {
     title: '',
     location: '',
     owner: '',
-    date: Date ,
+    date: Date,
+    time: 'time',
     details: '',
   })
 
@@ -45,26 +46,17 @@ const EventNew = (props) => {
           placeholder="Location"
           onChange={handleChange}
         />
-        <label htmlFor="owner-input">Owner</label>
-        <input
-          required
-          type="text"
-          name="owner"
-          className={styles.ownerInput}
-          value={form.owner}
-          placeholder="Owner"
-          onChange={handleChange}
-        />
          <label htmlFor="date-input">Date</label>
         <input
           required
-          type="date"
+          type="datetime-local"
           name="date"
           className={styles.dateInput}
           value={form.date}
           placeholder="Date"
           onChange={handleChange}
         />
+        <label htmlFor="time-input">Time</label>
          <label htmlFor="details-input">Details</label>
         <input
           required
