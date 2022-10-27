@@ -31,7 +31,7 @@ console.log("PROFILES", profiles)
       <h1>Hello. This is a list of all the Birders.</h1>
       {profiles.length ? 
         <>
-          <main className={styles.container}>
+          <main className={styles.profilesList}>
             {profiles.map(profile => (
               <ProfileCard profile={profile} key={profile._id}/>
             ))}

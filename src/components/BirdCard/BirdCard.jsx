@@ -22,7 +22,6 @@ const BirdCard = (props) => {
               <Link to={`/birds/${props.bird._id}`}><h1>{props.bird.name.toUpperCase()}</h1></Link>
             </span>
           </header>
-          {/* <p>{props.bird.description}</p>  */}
 
         {(location.pathname ==='/birds') || (location.pathname !=='/birds' && props.wishlist ) ?
 

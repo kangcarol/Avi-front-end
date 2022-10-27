@@ -8,6 +8,7 @@
   box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
   -moz-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
   -webkit-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
+  text-decoration: none;
 }
 
 .birdCard header {
@@ -32,7 +33,8 @@
 
 .birdCard h1 {
   margin: 0;
-  font-size: 19px;
+  font-size: 24px;
+  font-weight:600;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 1;

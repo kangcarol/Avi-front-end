@@ -7,11 +7,9 @@ import ProfileIcon from '../../assets/branding/profile.png'
 // import AuthorInfo from "../AuthorInfo/AuthorInfo"
 
 const ProfileCard = ({ profile }) => {
-  console.log("PROFILE PHOTO", profile.photo)
   return (
     <>
-      <Link to={`/profiles/${profile._id}`}>
-        <article className={styles.container}>
+        <article className={styles.profileCard}>
           <header>
             <span>
               {profile.photo ?
@@ -20,9 +18,10 @@ const ProfileCard = ({ profile }) => {
               <img src={ProfileIcon} alt="Default avatar" style={{width: "40px"}}/>}
             </span>
           </header>
+        <Link to={`/profiles/${profile._id}`}>
           <h3>{profile.name.toUpperCase()}</h3>
+        </Link>
         </article>
-      </Link>
     </>
   )
 }
