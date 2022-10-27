@@ -1,9 +1,3 @@
-/* body {
-  background-image: url('../../assets/branding/supplylist-details-background-image.webp');
-  background-size: cover;
-  background-position: center;
-} */
-
 div {
   display: flex;
   justify-content: center;
@@ -11,19 +5,23 @@ div {
   flex-direction: column;
 }
 
-.container {
-  height: 100%;
-  width: 330px;
+.supplylist {
+  width: 100%;
+  /* height: 250px; */
+  padding: 14px 21px;
+  border-radius: 10px;
   display: flex;
-  align-items: center;
-  flex-direction: column;
   justify-content: center;
-  background-color: white;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('../../assets/branding/AVI-notecard-REVISED.png');
+  background-position: center;
+  background-size: cover;
   margin-top: 2%;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
-.container article, .container > section {
+.supplylist article, .container > section {
   width: 100%;
   padding: 21px;
   display: flex;
@@ -31,13 +29,13 @@ div {
   flex-direction: column;
 }
 
-.container p {
+.supplylist  p {
   /* text-indent: 21px; */
   text-align-last: left;
 	/* word-break: break-all; */
 }
 
-.container header {
+.supplylist  header {
   display: flex;
   margin-bottom: 10px;
   flex-direction: column;
@@ -66,9 +64,9 @@ div {
 
 
 
-.container span button, .container span a {
+.supplylist  span button, .container span a {
   margin: 0;
-  width: 20%;
+  /* width: 20%; */
   padding: 5px;
   font-size: 14px;
   font-weight: 500;
@@ -80,11 +78,11 @@ div {
   text-decoration: none;
 }
 
-.container span button, .container span a  {
+.supplylist  span button, .container span a  {
   cursor: pointer;
 }
 
-.container > section article {
+.supplylist  > section article {
   padding: 0;
   width: 100%;
   min-height: 140px;
@@ -92,7 +90,7 @@ div {
   margin: 4px 0px 14px;
 }
 
-.container > section h1 {
+.supplylist  > section h1 {
   font-size: 21px;
 }
 
