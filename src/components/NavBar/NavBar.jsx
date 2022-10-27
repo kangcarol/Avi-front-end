@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import styles from './NavBar.module.css'
+import DefaultBirdPhoto from '../../assets/branding/AVI-nav-logo.svg'
 
 const NavBar = ({ user, handleLogout}) => {
 
@@ -11,10 +12,11 @@ const NavBar = ({ user, handleLogout}) => {
   )
 
   const protectedLinks = (
-    console.log(user),
+
     <ul>
       <>
-      <h2><NavLink to={`/profiles/${user.profile}`}>   Welcome, {user ? user.name.toUpperCase() : 'Birder'}</NavLink></h2>
+      <NavLink to="/"><img src={DefaultBirdPhoto} alt="logo" style={{width: "40px"}}/></NavLink>
+      <h2><NavLink to={`/profiles/${user?.profile}`}>   Welcome, {user ? user.name.toUpperCase() : 'Birder'}</NavLink></h2>
       <li><NavLink to="/profiles">BIRDERS</NavLink></li>
       <li><NavLink to="/birds">BIRDS</NavLink></li>
       <li><NavLink to="/supplylists">SUPPLY LISTS</NavLink></li>

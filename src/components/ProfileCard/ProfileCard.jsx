@@ -7,6 +7,7 @@ import ProfileIcon from '../../assets/branding/profile.png'
 // import AuthorInfo from "../AuthorInfo/AuthorInfo"
 
 const ProfileCard = ({ profile }) => {
+  console.log("PROFILE PHOTO", profile.photo)
   return (
     <>
       <Link to={`/profiles/${profile._id}`}>
@@ -26,5 +27,4 @@ const ProfileCard = ({ profile }) => {
   )
 }
 
-//! need onclick for wishlist button
 export default ProfileCard

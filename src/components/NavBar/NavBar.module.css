@@ -30,19 +30,19 @@
 
 .container li {
   text-align: center;
-  /* margin: 0 24px; */
+  margin: 0 24px;
 }
-h2 {
+.nav h2 {
   font-size: 1.4em;
 }
 
-a {
+.nav a {
   font-family: 'Montserrat', sans-serif;
   color: rgb(240, 210, 189);
   text-decoration: none;
 
 }
-a:hover {
+.nav a:hover {
   color: rgb(87, 74, 226);
 }
 
