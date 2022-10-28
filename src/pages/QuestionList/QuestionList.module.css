@@ -22,7 +22,7 @@ h1 {
   font-family:'Courier Prime', monospace;
   color: rgb(240, 210, 189);
   font-weight: bold;
-  background-color: rgb(109, 104, 117);
+  background-color: #6c757d;
   /* background-image: linear-gradient( rgb(240, 210, 189), rgb(109, 104, 117)); */
 }
 
