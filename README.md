@@ -18,11 +18,19 @@ AVI is an app for birders that gives them a place to connect.  They can track th
 
 ***
 
-AVI App: [Link here]()
+AVI App: [Link here](https://avi-birding.netlify.app/)
 
 ***
 
 ## Planning Materials: [Link here](https://trello.com/invite/b/1NF404bv/ATTIe2bd351d8e5cc711db9e2ab7fd18da1bD084E057/🦤🐣bird-watching🦆)
+
+***
+
+## Contributors:
+[Zain Ahmed](https://github.com/Zain23456)
+[Lindsay Henderson](https://github.com/Lucky-feather)
+[Carol Kang](https://github.com/kangcarol)
+[Tiffany Morningstar](https://github.com/tiffanymorningstar)
 
 ***
 
@@ -51,6 +59,7 @@ AVI App: [Link here]()
 ***
 
 ## Thank You:
-
+Logo by Carol Kang
+Big thanks to all of the teachers and TA's that helped us with our project!
 
 

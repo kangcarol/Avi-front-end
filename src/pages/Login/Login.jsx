@@ -10,7 +10,7 @@ const LoginPage = props => {
   }
 
   return (
-    <main className={styles.container}>
+    <main className={styles.login}>
       <h1>Log In</h1>
       <p>{message}</p>
       <LoginForm

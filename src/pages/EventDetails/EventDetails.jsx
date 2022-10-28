@@ -27,7 +27,6 @@ const EventDetails = (props) => {
   }, [id])
 
   if (!event) return <Loading />
-
   return (
     <main className={styles.event}>
       <article>
