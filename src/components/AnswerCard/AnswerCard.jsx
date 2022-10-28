@@ -1,11 +1,12 @@
+import styles from './AnswerCard.module.css'
+
 const AnswerCard = ({ answer }) => {
   return (
-    <article>
+    <article className={styles.container}>
       <header key ={answer.id}>
-        {/* <AuthorInfo content={answer} /> */}
       </header>
       {console.log(answer.author.name)}
-      <p>{answer.text}</p>
+      <div>{answer.text}</div>
     </article>
   )
 }
