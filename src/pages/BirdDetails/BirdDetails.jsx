@@ -3,7 +3,6 @@ import { useParams, Link } from "react-router-dom"
 
 // components
 import Loading from "../Loading/Loading"
-import AuthorInfo from "../../components/AuthorInfo/AuthorInfo"
 
 import styles from "./BirdDetails.module.css"
 
