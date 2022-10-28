@@ -25,8 +25,8 @@
     if (!profile) return <Loading />
 
     return (
-      <main className={styles.profileDetails}>
-        <article>
+      // <main className={styles.profileDetails}>
+        <article className={styles.profileDetails}>
           <header>
               {profile.photo ?
               <img src={profile.photo} alt="User's avatar"/>
@@ -53,7 +53,7 @@
             ))}
 
         </article>
-      </main>
+      // </main>
     )
   }
 
