@@ -41,9 +41,8 @@ header {
   font-size: 18px;
   font-family:'Courier Prime', monospace;
   color: rgb(240, 210, 189);
-  font-weight: bold;
   background-color: #6c757d;
-  /* background-image: linear-gradient( rgb(240, 210, 189), rgb(109, 104, 117)); */
+
 }
 section {
   display: flex;
