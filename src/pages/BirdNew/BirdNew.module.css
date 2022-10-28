@@ -4,13 +4,13 @@
   display: flex;
   /* overflow-x: hidden; */
   /* overflow-y: scroll; */
-  padding: 28px 21px;
   align-items: center;
   flex-direction: column;
   background-image: url('../../assets/branding/AVI-notecard-REVISED.png');
   background-size: cover;
   justify-content: flex-start;
   align-items: flex-start;
+  margin: 40px 0 0 0;
 }
 
 
@@ -23,7 +23,7 @@
   margin: 7px 0px 14px 0px;
   outline: 1px solid black;
   width: 70%;
-  margin: 0 0 0 160px;
+  margin: 0 0 0 180px;
 }
 
 .birdNew textarea {
@@ -33,7 +33,7 @@
 .birdNew label {
   font-weight: 600;
   margin: 7px 0px 14px 0px;
-  margin: 0 0 0 160px;
+  margin: 0 0 0 180px;
 }
 
 .birdNew button {
@@ -43,7 +43,8 @@
   background: var(--primary);
   width: 100px;
   height: 50px;  
-  margin: 0 0 0 160px;
+  margin: 0 0 0 180px;
+  font-size: 18px;
 }
 
 .birdNew input {
@@ -51,5 +52,5 @@
   padding: 14px;
   font-size: 14px;
   width: 70%;
-  margin: 0 0 0 160px;
+  margin: 0 0 0 180px;
 }
