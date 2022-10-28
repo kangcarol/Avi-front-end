@@ -78,7 +78,7 @@
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   color: rgb(99, 124, 164);
-  padding: 0 0 35px 0;
+  padding: 20px 0 25px 0;
 }
 
 .birdCard a {
