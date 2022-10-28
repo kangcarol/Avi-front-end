@@ -6,7 +6,7 @@ const AnswerCard = ({ answer }) => {
       <header key ={answer.id}>
       </header>
       {console.log(answer.author.name)}
-      <div>{answer.text}</div>
+      <h4>{answer.text}</h4>
     </article>
   )
 }
