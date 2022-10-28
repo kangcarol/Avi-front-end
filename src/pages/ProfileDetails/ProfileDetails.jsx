@@ -35,7 +35,7 @@
               <h1>{profile.name.toUpperCase()}</h1>
           </header>
 
-          <h1>Seen</h1>
+          <h2>Seen</h2>
             {props.seen.map(bird => (
               <>
               <BirdCard  bird={bird} key={bird._id} />
@@ -43,7 +43,7 @@
               <br></br>
               </>
               ))}
-          <h1>Wishlist</h1>
+          <h2>Wishlist</h2>
             {props.wishlist.map(bird => (
               <>
               <BirdCard wishlist={true} handleSeen={props.handleSeen}  bird={bird} key={bird._id}/>

@@ -25,8 +25,8 @@ const BirdNew = (props) => {
   }
 
   return (
-    <main className={styles.container}>
-      <form onSubmit={handleSubmit}>
+    // <main className={styles.birdNew}>
+      <form onSubmit={handleSubmit} className={styles.birdNew}>
         <label htmlFor="title-input">Bird Name</label>
         <input
           required
@@ -57,13 +57,11 @@ const BirdNew = (props) => {
 						name="photo"
 						onChange={handleChangePhoto}
 					/>
-
+          <br></br>
         <button type="submit">save</button>
       </form>
-    </main>
+    // </main>
   )
 }
-
-//! CHANGE OUT IMAGE CODE -- AFTER LECTURE ON HOW TO 
 
 export default BirdNew
