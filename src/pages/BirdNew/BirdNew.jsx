@@ -3,9 +3,9 @@ import styles from './BirdNew.module.css'
 
 const BirdNew = (props) => {
   const [form, setForm]  = useState({
-    title: '',
-    text: '',
-    category: 'News',
+    name: '',
+    description: '',
+    photo: '',
   })
 
   const [photoData, setPhotoData] = useState({})
@@ -16,7 +16,6 @@ const BirdNew = (props) => {
 
   const handleChangePhoto =(e) => {
     setPhotoData({ photo: e.target.files[0] })
-    //I think photo is image
   }
 
   const handleSubmit = (e) => {
@@ -63,7 +62,5 @@ const BirdNew = (props) => {
     </main>
   )
 }
-
-//! CHANGE OUT IMAGE CODE -- AFTER LECTURE ON HOW TO 
 
 export default BirdNew

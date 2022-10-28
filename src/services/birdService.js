@@ -1,10 +1,9 @@
 import * as tokenService from "./tokenService"
 
-const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/birds` //! double check route
+const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/birds`
 
 const index = async () => {
   try {
-    // GET http://localhost:3001/birds
     const res = await fetch(BASE_URL, {
       headers: { 'Authorization': `Bearer ${tokenService.getToken()}`}
     })
@@ -16,7 +15,6 @@ const index = async () => {
 
 const show = async (id) => {
   try {
-    // GET http://localhost:3001/birds/:id
     const res = await fetch(`${BASE_URL}/${id}`, {
       headers: { "Authorization": `Bearer ${tokenService.getToken()}`}
     })
@@ -27,14 +25,7 @@ const show = async (id) => {
 }
 
 const create = async (birdData) => {
-  // birdData will have a shape of:
-//   {
-//     "name": "string",
-//     "description": "string",
-//     etc etc
-//   }
   try {
-    // POST http://localhost:3001/birds
     const res = await fetch(BASE_URL, {
       method: 'POST',
       headers: {

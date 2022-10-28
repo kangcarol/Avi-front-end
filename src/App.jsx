@@ -100,8 +100,8 @@ const App = () => {
   }
 
   const handleUpdateBird = async (birdData, photo) => {
-    // birdData._id will be 634daa34dc0dfecfbb5767de, as example
     const updatedBird = await birdService.update(birdData)
+    
     if(photo) {
       updatedBird.photo = await birdPhotoHelper(photo, updatedBird._id)
     }

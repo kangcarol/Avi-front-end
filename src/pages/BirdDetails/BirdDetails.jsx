@@ -21,7 +21,6 @@ const BirdDetails = (props) => {
     }
     fetchBird()
   }, [id])
-  // if want error message that resource is not available can write code here
 
 
   if (!bird) return <Loading />
@@ -33,7 +32,6 @@ const BirdDetails = (props) => {
           <h1>{bird.name.toUpperCase()}</h1>
           <p>{bird.description}</p>
           <span>
-            {/* <AuthorInfo content={bird} /> */}
             {bird.author._id === props.user.profile &&
               <>
                 <Link to={`/birds/${id}/edit`} state={bird}>edit</Link>
