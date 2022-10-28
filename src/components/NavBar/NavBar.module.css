@@ -50,18 +50,7 @@
 }
 
 @media only screen and (max-width: 414px) {
-  /* .nav ul {
-    display: one;
-    padding-left: 0px;
-    flex-flow: column nowrap;
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 275px;
-    padding: 3.5rem;
 
-  } */
   .nav li {
     font-size: 15px;
   }

@@ -40,6 +40,7 @@
               <>
               <BirdCard  bird={bird} key={bird._id} />
               <span></span>
+              <br></br>
               </>
               ))}
           <h1>Wishlist</h1>
@@ -47,6 +48,7 @@
               <>
               <BirdCard wishlist={true} handleSeen={props.handleSeen}  bird={bird} key={bird._id}/>
               <span></span>
+              <br></br>
               </>
             ))}
 
