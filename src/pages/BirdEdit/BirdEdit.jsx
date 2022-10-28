@@ -6,8 +6,6 @@ const BirdEdit = (props) => {
   const { state } = useLocation()
   const [form, setForm] = useState(state)
 
-  console.log(state)
-
   const [photoData, setPhotoData] = useState({})
 
   const handleChangePhoto = (evt) => {
@@ -62,7 +60,5 @@ const BirdEdit = (props) => {
     </main>
   )
 }
-
-//! CHANGE OUT IMAGE CODE -- AFTER LECTURE ON HOW TO 
 
 export default BirdEdit
