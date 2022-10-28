@@ -6,6 +6,11 @@
   grid-template-columns: repeat(1, 1fr);
 }
 
+.profilesList article {
+  background-image: url('../../assets/branding/AVI-notecard-no-logo.png');
+}
+
+
 @media only screen and (min-width: 900px) {
   .profilesList {
     grid-template-columns: repeat(2, 1fr);
