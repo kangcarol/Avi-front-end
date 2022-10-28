@@ -1,21 +1,10 @@
 import { useState, useEffect } from 'react'
 import * as profileService from '../../services/profileService'
-import { Link } from 'react-router-dom'
 import ProfileCard from '../../components/ProfileCard/ProfileCard'
 import styles from "./Profiles.module.css"
 
 const Profiles = () => {
   const [profiles, setProfiles] = useState([])
-
-
-  // const handleUpdateProfile = async (profileData) => {
-  //   const updatedProfile = await profileService.update(profileData)
-  //   const updatedProfilesData = profiles.map(profile => {
-  //     return profileData._id === profile._id ? updatedProfile : profile
-  //   })
-  //   setProfiles(updatedProfilesData)
-  //   navigate('/profiles')
-  // }
 
   useEffect(() => {
     const fetchProfiles = async () => {
@@ -24,7 +13,7 @@ const Profiles = () => {
     }
     fetchProfiles()
   }, [])
-console.log("PROFILES", profiles)
+
 
   return (
     <>
