@@ -5,7 +5,6 @@ import BirdIcon from '../../assets/branding/profile.png'
 
 const BirdCard = (props) => {
   const location = useLocation();
-  console.log(props, "wishlist")
 
 
   return (

@@ -3,7 +3,6 @@ import BirdCard from "../../components/BirdCard/BirdCard";
 import { useNavigate } from "react-router-dom";
 
 const BirdList = (props) => {
-  console.log("birdlist props:", props);
   const navigate = useNavigate();
 
   return (

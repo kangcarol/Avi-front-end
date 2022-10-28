@@ -21,7 +21,6 @@ const BirdDetails = (props) => {
     }
     fetchBird()
   }, [id])
-  // if want error message that resource is not available can write code here
 
 
   if (!bird) return <Loading />
