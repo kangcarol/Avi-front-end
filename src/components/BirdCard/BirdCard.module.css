@@ -18,7 +18,6 @@
 } */
 
 .birdCard header {
-  padding: 20px;
   margin-bottom: 14px;
   display: flex;
   flex-direction: row;
@@ -49,13 +48,24 @@
 .birdCard div {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: flex-end;
-  margin: 0 20px 10px 20px;
+  margin: 10px 0px 5px 10px;
 }
 
-.birdCard button{
-  width: 120px;
+.birdCard button {
+  width: 160px;
+  height: 50px;
+  /* padding: 18px 18px; */
+  border-radius: 10px;
+  font-size: 18px;
+  font-family:'Courier Prime', monospace;
+  color: rgb(240, 210, 189);
+  background-color: #6c757d;
+  border: solid 3px  #6c757d;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .birdCard h1 {

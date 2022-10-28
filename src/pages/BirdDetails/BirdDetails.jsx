@@ -33,7 +33,6 @@ const BirdDetails = (props) => {
           <h1>{bird.name.toUpperCase()}</h1>
           <p>{bird.description}</p>
           <span>
-            {/* <AuthorInfo content={bird} /> */}
             {bird.author._id === props.user.profile &&
               <>
                 <Link to={`/birds/${id}/edit`} state={bird}>edit</Link>
