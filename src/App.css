@@ -8,8 +8,8 @@ main {
 }
 
 button {
-  width: 12em;
-  height: 2em;
+  /* width: 12em;
+  height: 2em; */
   font-family:'Courier Prime', monospace;
   font-weight: 600;
   font-size: 24px;

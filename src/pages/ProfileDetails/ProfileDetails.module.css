@@ -1,14 +1,13 @@
-.profileDetails {
+/* .container {
   height: 100%;
   display: flex;
   overflow: scroll;
   align-items: center;
   flex-direction: column;
   background-color: var(--card-background);
-
 }
 
-.profileDetails article, .profileDetails > section {
+.container article, .container > section {
   width: 100%;
   padding: 21px;
   display: flex;
@@ -16,25 +15,24 @@
   flex-direction: column;
 }
 
-.profileDetails p {
+.container p {
   text-indent: 21px;
   text-align-last: left;
-	word-break: break-all;
 }
 
-.profileDetails header {
+.container header {
   display: flex;
   margin-bottom: 21px;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.profileDetails h1 {
+.container h1 {
   margin: 0;
   margin-bottom: 7px;
 }
 
-.profileDetails h3 {
+.container h3 {
   margin: 0;
   font-size: 16px;
   font-weight: 600;
@@ -42,18 +40,18 @@
   color: var(--primary);
 }
 
-.profileDetails span {
+.container span {
   width: 100%;
   display: flex;
 	margin-top: 10px;
   align-items: center;
 }
 
-.profileDetails div {
+.container div {
   width: 100%;
 }
 
-.profileDetails span button, .profileDetails span a {
+.container span button, .container span a {
   margin: 0;
   width: 20%;
   padding: 5px;
@@ -66,11 +64,11 @@
   border: 1px solid var(--border);
 }
 
-.profileDetails span button, .profileDetails span a  {
+.container span button, .container span a  {
   cursor: pointer;
 }
 
-.profileDetails > section article {
+.container > section article {
   padding: 0;
   width: 100%;
   min-height: 140px;
@@ -78,20 +76,27 @@
   margin: 4px 0px 14px;
 }
 
-.profileDetails > section h1 {
-  color: rgb(99, 124, 164);
-  font-size: 24px;
+.container > section h1 {
+  font-size: 21px;
 }
 
-.profileDetails h3 {
-  font-size: 24px;
-  color: rgb(113, 142, 188);
-}
-
-.profileDetails h3:hover {
-  color: rgb(87, 74, 226);
-}
-
-.profileDetails > section article p {
+.container > section article p {
   text-indent: 0px;
+} */
+
+.profileDetails img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.profileDetails header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileDetails span {
+  height: 40px;
 }
