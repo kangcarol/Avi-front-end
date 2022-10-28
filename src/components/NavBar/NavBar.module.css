@@ -5,7 +5,8 @@
   height: 80px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  justify-items: flex-end;
   position: fixed; 
   padding: 14px 21px;
   align-items: center;
@@ -49,18 +50,7 @@
 }
 
 @media only screen and (max-width: 414px) {
-  /* .nav ul {
-    display: one;
-    padding-left: 0px;
-    flex-flow: column nowrap;
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 275px;
-    padding: 3.5rem;
 
-  } */
   .nav li {
     font-size: 15px;
   }
