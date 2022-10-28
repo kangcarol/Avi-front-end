@@ -58,7 +58,6 @@ const App = () => {
   const [questions, setQuestions] = useState([])
   const [seen,setSeen] = useState([])
   const [wishlist,setWishlist] = useState([])
-  // const [about,setAbout] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -72,11 +71,8 @@ const App = () => {
 
   const handleAddWishlist = (addedBird) => {
     setWishlist([addedBird, ...wishlist])
-    console.log(wishlist, "WISHLIST")
     navigate(`/profiles/${user.profile}`)
   }
-
-  console.log("USER", user)
 
   const handleSeen = (addSeen) => {
     setSeen([addSeen, ...seen])
@@ -119,9 +115,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    console.log("The useEffect is running");
     const fetchAllBirds = async () => {
-      console.log('The Fetch All Birds function is running')
       const data = await birdService.index()
       setBirds(data)
     }
@@ -209,9 +203,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    console.log("The useEffect is running");
     const fetchAllQuestions = async () => {
-      console.log('The Fetch All function is running')
       const data = await questionService.index()
       setQuestions(data)
     }

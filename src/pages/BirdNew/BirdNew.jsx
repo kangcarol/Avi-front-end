@@ -5,7 +5,6 @@ const BirdNew = (props) => {
   const [form, setForm]  = useState({
     name: '',
     description: '',
-    photo: '',
   })
 
   const [photoData, setPhotoData] = useState({})

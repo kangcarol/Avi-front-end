@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import * as profileService from '../../services/profileService'
-import { Link } from 'react-router-dom'
 import ProfileCard from '../../components/ProfileCard/ProfileCard'
 import styles from "./Profiles.module.css"
 
@@ -14,7 +13,7 @@ const Profiles = () => {
     }
     fetchProfiles()
   }, [])
-console.log("PROFILES", profiles)
+
 
   return (
     <>
