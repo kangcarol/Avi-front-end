@@ -1,24 +1,9 @@
-/* .birdDetails div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  overflow: hidden;
-  line-height: 1.5rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  text-align: left;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-} */
-
 .birdDetails {
-  width: 60%;
-  /* height: 250px; */
+  width: 50%;
   padding: 14px 21px;
   border-radius: 10px;
   border: 1px solid var(--border);
-  background-color: var(--card-background);
+  background-color: gray;
   box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
   -moz-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
   -webkit-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
@@ -37,31 +22,6 @@
   justify-content: center;
   align-items: center;
 }
-/* 
-.birdDetails {
-  width: 50%;
-  height: 400px;
-  padding: 100px 21px;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  background-image: url('../../assets/branding/AVI-notecard-no-logo.png');
-  background-position: center;
-  background-size: cover;
-  margin-top: 5%;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  font-size: 20px;
-} */
-
-/* .birdDetails article, .birdDetails > section {
-  width: 100%;
-  padding: 21px;
-  display: flex;
-  max-width: 700px;
-  flex-direction: column;
-} */
 
 .birdDetails header {
   display: flex;
@@ -142,46 +102,4 @@
 
 .birdDetails a:hover{
   color: white; 
-}
-
-/* ---------- */
-
-
-
-.event h1 {
-  text-align: center;
-  padding: 15px;
-  color: black;
-}
-
-.event button {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  font-size: 1.5rem;
-}
-
-a {
-  color: black;
-  text-decoration: none;
-}
-
-a :hover{
-  color: white;
-}
-
-@media only screen and (min-width: 900px) {
-  .event {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  .event {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media only screen and (min-width: 1500px) {
-  .event {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
