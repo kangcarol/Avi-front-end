@@ -42,8 +42,8 @@ const BirdDetails = (props) => {
             <span>
               {bird.author._id === props.user.profile &&
                 <>
-                  <Link to={`/birds/${id}/edit`} state={bird}>edit</Link>
-                  <button className="btn btn-secondary" onClick={() => props.handleDeleteBird(id)}>delete</button>
+                  <Link to={`/birds/${id}/edit`} state={bird}>Edit</Link>
+                  <button className="btn btn-secondary" onClick={() => props.handleDeleteBird(id)}>Delete</button>
                 </>
               }
             </span>

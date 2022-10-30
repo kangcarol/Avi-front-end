@@ -57,20 +57,16 @@
   padding: 5px;
 }
 
+
+
 .birdDetails button {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   width: 80px;
   height: 35px;
+  font-size: 1rem;
   padding: 18px 18px 18px 35px;
-  /* border-radius: 10px;
-  font-size: 18px;
-  font-family:'Courier Prime', monospace;
-  color: rgb(240, 210, 189);
-  background-color: #6c757d;
-  border: solid 3px  #6c757d;
-  align-items: center;
-  justify-content: center;
-  text-align: center; */
 }
+
 
 .birdDetails  span button, .birdDetails span a {
   margin: 0;

@@ -39,14 +39,16 @@ const EventDetails = (props) => {
         <p>{event.details}</p>
         <p>{formattedDate} - {formattedTime}</p>
         <span>
+          {event.owner._id === props.user.profile &&
           <>
             <Link to={`/events/${id}/edit`} state={event}>Edit</Link>
-            <button
+            <button className="btn btn-secondary"
               onClick={() => props.handleDeleteEvent(id)}
             >
               Delete
             </button>
           </>
+          }
         </span>
       </article>
     </main>
