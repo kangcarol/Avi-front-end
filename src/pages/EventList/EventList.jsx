@@ -7,9 +7,9 @@ const EventList = (props) => {
   const navigate = useNavigate();
   return (
     <>
+      <h1 className={styles.event}>Event List</h1>
       <main className={styles.event}>
-        <h1>EVENT LIST</h1>
-        <button onClick={() => {navigate("/events/new")}}>ADD AN EVENT</button>
+        <button className="btn btn-secondary"  onClick={() => {navigate("/events/new")}}>ADD AN EVENT</button>
         {props.events.map(event => (
           <EventCard event={event} key={event._id}/>
         ))}

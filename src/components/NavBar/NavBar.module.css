@@ -56,7 +56,7 @@
 }
 
 .nav a:hover {
-  color: rgb(87, 74, 226);
+  color: white;
 }
 
 @media only screen and (max-width: 414px) {

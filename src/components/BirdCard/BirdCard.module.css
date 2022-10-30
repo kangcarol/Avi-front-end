@@ -10,6 +10,7 @@
   -webkit-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
   text-decoration: none;
   background-image: url('../../assets/branding/AVI-notecard-no-logo.png');
+  background-size: cover;
 }
 
 .birdCard header {
@@ -17,21 +18,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-}
-
-.birdCard span {
-  display: flex;
-  align-items: center;
-  margin: 7px 0px 12px 0px;
-  justify-content: space-between;
-}
-
-.birdCard span img {
-  margin: 0;
-  width: 32px;
-  opacity: .8;
-  padding: 3px;
-  border: 1px solid var(--border);
 }
 
 .birdCard img {
@@ -48,20 +34,6 @@
   margin: 10px 0px 5px 10px;
 }
 
-.birdCard button {
-  width: 160px;
-  height: 50px;
-  border-radius: 10px;
-  font-size: 18px;
-  font-family:'Courier Prime', monospace;
-  color: rgb(240, 210, 189);
-  background-color: #6c757d;
-  border: solid 3px  #6c757d;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
 .birdCard h1 {
   margin: 0;
   font-size: 24px;
@@ -71,7 +43,7 @@
   -webkit-line-clamp: 1;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
-  color: rgb(99, 124, 164);
+  color: black;
   padding: 0;
 }
 
@@ -80,35 +52,9 @@
 }
 
 .birdCard h1:hover {
-  color: rgb(87, 74, 226);
+  color: white;
 }
 
-.birdCard p {
-  width: 100%;
-  font-size: 14px;
-  font-weight: 400;
-  overflow: hidden;
-  line-height: 1.5rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  text-align-last: left;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-}
-
-.birdCard div h4 {
-  font-size: 14px;
-  margin-bottom: 2px;
-}
-
-.birdCard div h5 {
-  font-size: 11px;
-}
-
-.birdCard div > img {
-  width: 30px;
-}
-
-.birdCard div section img {
-  width: 14px;
+.birdCard button {
+  font-size: 1rem;
 }

@@ -18,7 +18,7 @@ AVI is an app for birders that gives them a place to connect.  They can track th
 
 ***
 
-AVI App: [Link here](https://avi-birding.netlify.app/)
+## AVI App: [Link here](https://avi-birding.netlify.app/)
 
 ***
 

@@ -11,6 +11,7 @@
   text-decoration: none;
   justify-content: center;
   align-items: center;
+  background-size: cover;
 }
 
 .profileCard article {
@@ -22,7 +23,7 @@
 
 .profileCard header {
   display: flex;
-  flex-direction: row;
+  flex-direction: row ;
   justify-content: space-around;
   align-items: center;
 }
@@ -58,7 +59,7 @@
   -webkit-line-clamp: 1;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
-  color: rgb(99, 124, 164);
+  color: black;
 }
 
 .profileCard a {
@@ -66,13 +67,13 @@
 }
 
 .profileCard h3 {
-  color: rgb(99, 124, 164);
+  color: black;
   font-weight: 600;
   font-size: 24px;
 }
 
 .profileCard h3:hover {
-  color: rgb(87, 74, 226);
+  color: white;
 }
 
 .profileCard p {
@@ -97,7 +98,7 @@
 }
 
 .profileCard a:hover {
-  color: rgb(87, 74, 226);
+  color: white;
 }
 
 .profileCard div h4 {

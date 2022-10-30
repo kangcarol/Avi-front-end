@@ -12,6 +12,7 @@
 
 .profilesList article {
   background-image: url('../../assets/branding/AVI-notecard-no-logo.png');
+  background-size: cover;
 }
 
 @media only screen and (min-width: 900px) {

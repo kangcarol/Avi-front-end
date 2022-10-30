@@ -58,7 +58,6 @@
   display: -webkit-box;
   -webkit-line-clamp: 3;
 	word-break: break-all;
-  /* text-align-last: left; */
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   text-align: left;

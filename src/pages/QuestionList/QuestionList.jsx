@@ -3,19 +3,17 @@ import QuestionCard from "../../components/QuestionCard/QuestionCard";
 import { useNavigate } from "react-router-dom";
 
 const QuestionList = (props) => {
-  console.log("questionlist props:", props)
   const navigate = useNavigate()
   return (
-    <main className={styles.container}>
-      <div>
-      {props.questions.map(question => (
-        <QuestionCard question={question} key={question._id}/>
-      ))}
-  
-      <button onClick={() => {navigate('/questions/new')}}>Create a New Post</button>
-  
-    </div>
-    </main>
+    <>
+      <h1 className={styles.question}>Field Notes</h1>
+      <main className={styles.question}>
+        <button className="btn btn-secondary" onClick={() => {navigate('/questions/new')}}>Create a New Post</button>
+          {props.questions.map(question => (
+            <QuestionCard question={question} key={question._id}/>
+          ))}
+      </main>
+    </>
   )
 }
 

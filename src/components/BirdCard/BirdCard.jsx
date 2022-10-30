@@ -22,13 +22,13 @@ const BirdCard = (props) => {
         <div>
         {(location.pathname ==='/birds') || (location.pathname !=='/birds' && props.wishlist ) ?
 
-          <button onClick={() => props.handleSeen(props.bird) }>seen</button>
+          <button className="btn btn-secondary" onClick={() => props.handleSeen(props.bird) }>seen</button>
           :
           ''
         }
         {(location.pathname ==='/birds') || (location.pathname !=='/birds' && props.wishlist===false) ?
 
-        <button onClick={() => props.handleAddWishlist(props.bird)}>+ wishlist</button>
+        <button className="btn btn-secondary" onClick={() => props.handleAddWishlist(props.bird)}>+ wishlist</button>
           :
           ''
         }
