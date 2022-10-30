@@ -6,6 +6,7 @@ const NavBar = ({ user, handleLogout}) => {
 
   const publicLinks = (
     <ul>
+      <NavLink to="/"><img src={DefaultBirdPhoto} alt="logo" style={{width: "55px"}}/></NavLink>
       <li><NavLink to="/login">Log In</NavLink></li>
       <li><NavLink to="/signup">Sign Up</NavLink></li>
     </ul>
@@ -14,7 +15,6 @@ const NavBar = ({ user, handleLogout}) => {
   const protectedLinks = (
     <ul >
       <>
-      <NavLink to="/"><img src={DefaultBirdPhoto} alt="logo" style={{width: "55px"}}/></NavLink>
       <h2 className={styles.landing}><NavLink to={`/profiles/${user?.profile}`}>   Welcome, {user ? user.name.toUpperCase() : 'Birder'}</NavLink></h2>
       <li ><NavLink to="/birds">BIRDS</NavLink></li>
       <li ><NavLink to="/profiles">BIRDERS</NavLink></li>

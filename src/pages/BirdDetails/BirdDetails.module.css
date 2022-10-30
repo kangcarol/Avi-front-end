@@ -43,11 +43,15 @@
   overflow-wrap: break-word;
 }
 
+.birdDetails  div {
+  height: 30vh;
+  width: 35vh;
+}
+
 .birdDetails img {
-  width: 240px;
-  height: 240px;
+  width: 90%;
+  height: 90%;
   border-radius: 50%;
-  padding: 0 10px 0 0;
 }
 
 .birdDetails span {
@@ -58,13 +62,11 @@
 }
 
 
-
 .birdDetails button {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   width: 80px;
   height: 35px;
   font-size: 1rem;
-  padding: 18px 18px 18px 35px;
 }
 
 
@@ -98,4 +100,32 @@
 
 .birdDetails a:hover{
   color: white; 
+}
+
+
+@media only screen and (min-width: 900px) {
+  .birdDetails {
+    width: 80%;
+  }
+
+  .birdDetails article {
+    /* grid-template-columns: repeat(1, 1fr); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+@media only screen and (min-width: 1200px) {
+  .birdDetails {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .birdDetails {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
