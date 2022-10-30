@@ -6,8 +6,12 @@
   grid-template-columns: repeat(1, 1fr);
 }
 
+.profilesList header {
+  padding: 20px 0 0 0;
+}
+
 .profilesList h1 {
-  padding: 50px 0 0 0;
+  padding: 10px 0 0 0;
 }
 
 .profilesList article {

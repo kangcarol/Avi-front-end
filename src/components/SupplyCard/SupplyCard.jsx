@@ -4,13 +4,11 @@ import styles from './SupplyCard.module.css'
 
 const SupplyListCard = ({ supplylist }) => {
   return (
-    <Link to={`/supplylists/${supplylist._id}`}>
-      <article className={styles.supplyCard}>
-        <header>
-            <h1>{supplylist.title}</h1>
-        </header>
+    <article className={styles.supplyCard}>
+      <Link to={`/supplylists/${supplylist._id}`}>
+        <h1>{supplylist.title}</h1>
+      </Link>
       </article>
-    </Link>
   )
 }
 
